@@ -1,786 +1,490 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>SCYPE - Suporte</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            color: #111;
-            line-height: 1.55;
-            padding: 2rem 1rem;
-        }
-
-        .container {
-            max-width: 880px;
-            margin: 0 auto;
-            background: #fff;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid #e6e6e6;
-            padding-bottom: 1.2rem;
-        }
-
-        .logo {
-            font-size: 2.2rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-            color: #000;
-        }
-
-        .tagline {
-            font-size: 0.75rem;
-            color: #888;
-            margin-top: 0.3rem;
-            letter-spacing: 0.3px;
-        }
-
-        .tabs {
-            display: flex;
-            gap: 0.3rem;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid #eaeaea;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .tab-btn {
-            background: none;
-            border: none;
-            padding: 0.65rem 1.4rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            font-family: inherit;
-            color: #555;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            margin-bottom: -1px;
-            border-radius: 0;
-        }
-
-        .tab-btn.active {
-            color: #000;
-            border-bottom: 2px solid #000;
-            font-weight: 600;
-        }
-
-        .tab-btn:hover:not(.active) {
-            color: #000;
-            background: #f7f7f7;
-        }
-
-        .panel {
-            display: none;
-            animation: fade 0.2s ease;
-        }
-
-        .panel.active-panel {
-            display: block;
-        }
-
-        @keyframes fade {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .legal-content {
-            font-size: 0.96rem;
-            color: #1c1c1e;
-            text-align: justify;
-        }
-
-        .legal-content h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 1rem 0 1rem 0;
-            color: #000;
-            letter-spacing: -0.3px;
-            text-align: left;
-            border-left: 4px solid #000;
-            padding-left: 1rem;
-        }
-
-        .legal-content h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin: 1.5rem 0 0.7rem 0;
-            color: #000;
-            text-align: left;
-        }
-
-        .legal-content p {
-            margin-bottom: 1rem;
-            text-align: justify;
-        }
-
-        .legal-content ul, .legal-content ol {
-            margin: 0.6rem 0 1rem 2rem;
-            text-align: justify;
-        }
-
-        .legal-content li {
-            margin-bottom: 0.4rem;
-        }
-
-        .legal-content strong {
-            color: #000;
-            font-weight: 600;
-        }
-
-        .legal-content hr {
-            margin: 1.8rem 0;
-            border: none;
-            border-top: 1px solid #e2e2e2;
-        }
-
-        .definitions-box {
-            background: #fafafc;
-            border: 1px solid #ececec;
-            border-radius: 16px;
-            padding: 1.2rem 1.5rem;
-            margin: 1rem 0 1.5rem 0;
-        }
-
-        .definitions-box p {
-            margin-bottom: 0.5rem;
-        }
-
-        .restore-card {
-            background: #f6f6f8;
-            border: 1px solid #e2e2e2;
-            border-radius: 20px;
-            padding: 1.4rem;
-            margin: 1.5rem 0;
-            text-align: center;
-        }
-
-        .btn-restore {
-            background: #000;
-            color: white;
-            border: none;
-            padding: 12px 28px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            font-family: inherit;
-            border-radius: 40px;
-            cursor: pointer;
-            transition: 0.2s;
-            margin-top: 0.8rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-restore:hover {
-            background: #2c2c2c;
-            transform: scale(0.98);
-        }
-
-        .btn-restore:disabled {
-            background: #aaa;
-            cursor: not-allowed;
-        }
-
-        .footer-note {
-            margin-top: 2.5rem;
-            padding-top: 1.2rem;
-            text-align: center;
-            font-size: 0.7rem;
-            color: #7a7a7e;
-            border-top: 1px solid #ececec;
-        }
-
-        @media (max-width: 600px) {
-            body { padding: 1.2rem; }
-            .tab-btn { padding: 0.5rem 1rem; font-size: 0.8rem; }
-            .legal-content { font-size: 0.9rem; }
-            .legal-content h2 { font-size: 1.3rem; }
-            .definitions-box { padding: 1rem; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="Ajuda, Termos, Privacidade e Regras da Comunidade do Scype.">
+<title>Scype - Ajuda e documentos legais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wellfleet&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fundo: #000000;
+    --superficie: #0E1520;
+    --superficie2: #172131;
+    --borda: #223047;
+    --texto: #FFFFFF;
+    --texto2: #A9B5C7;
+    --texto3: #8794A8;
+    --azul: #0A72E8;
+    --azul-claro: #4DA3FF;
+    --ouro: #F2A93B;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    background: var(--fundo);
+    color: var(--texto2);
+    font-family: 'Wellfleet', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+  .topo {
+    background: linear-gradient(180deg, rgba(10, 114, 232, .22), rgba(10, 114, 232, 0));
+    padding: 28px 16px 8px;
+  }
+  .largura { width: 100%; max-width: 760px; margin: 0 auto; }
+  .marca-linha { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .marca { color: var(--texto); font-size: 26px; letter-spacing: 6px; }
+  select {
+    background: var(--superficie);
+    color: var(--texto);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    font: inherit;
+    font-size: 14px;
+    min-height: 44px;
+    padding: 0 10px;
+  }
+  .abas-fundo {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, .94);
+    border-bottom: 1px solid var(--borda);
+    margin-top: 16px;
+  }
+  nav {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 10px 16px;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav a {
+    flex: none;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 16px;
+    border-radius: 22px;
+    border: 1px solid var(--borda);
+    background: var(--superficie);
+    color: var(--texto2);
+    font-size: 14.5px;
+    text-decoration: none;
+  }
+  nav a[aria-current="page"] { background: var(--azul); border-color: var(--azul); color: #FFFFFF; }
+  main { padding: 26px 16px 40px; }
+  h1 { color: var(--texto); font-size: 32px; font-weight: 400; line-height: 1.2; margin-bottom: 8px; }
+  h2 { color: var(--texto); font-size: 20px; font-weight: 400; line-height: 1.3; margin: 30px 0 8px; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 7px; }
+  strong { color: var(--texto); font-weight: 400; }
+  a { color: var(--azul-claro); }
+  .versao { color: var(--texto3); font-size: 14px; margin-bottom: 20px; }
+  .aviso {
+    background: rgba(242, 169, 59, .1);
+    border: 1px solid rgba(242, 169, 59, .5);
+    border-radius: 14px;
+    color: var(--texto);
+    font-size: 14.5px;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+  }
+  .cartao {
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    padding: 16px;
+    margin: 12px 0;
+  }
+  .cartao h2 { margin-top: 0; }
+  .cartao p:last-child { margin-bottom: 0; }
+  .botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    border-radius: 26px;
+    background: var(--azul);
+    color: #FFFFFF;
+    font-size: 16px;
+    padding: 0 18px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 12px;
+  }
+  .tabela { overflow-x: auto; margin-bottom: 16px; }
+  table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 14.5px; }
+  th, td { border: 1px solid var(--borda); padding: 9px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--superficie2); color: var(--texto); font-weight: 400; }
+  footer {
+    border-top: 1px solid var(--borda);
+    color: var(--texto3);
+    font-size: 13.5px;
+    padding: 20px 16px 36px;
+  }
+  :focus-visible { outline: 2px solid var(--azul-claro); outline-offset: 2px; }
+</style>
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        <div class="logo">SCYPE</div>
-    </div>
-
-    <div class="tabs">
-        <button class="tab-btn active" data-tab="privacy" id="tabPrivacy">Política de Privacidade</button>
-        <button class="tab-btn" data-tab="terms" id="tabTerms">Termos de Uso</button>
-        <button class="tab-btn" data-tab="restore" id="tabRestore">Restauração de Compra</button>
-    </div>
-
-    <!-- PAINEL: POLÍTICA DE PRIVACIDADE -->
-    <div id="privacyPanel" class="panel active-panel">
-        <div class="legal-content">
-            <h2 id="privacyTitle">Política de Privacidade</h2>
-            <p><strong id="lastUpdateText">Última atualização:</strong> <span id="lastUpdateDate">16 de Junho de 2026</span></p>
-            <p id="privacyIntro">Esta Política de Privacidade descreve como o SCYPE coleta, utiliza e protege suas informações pessoais. Ao utilizar nosso aplicativo, você concorda com os termos aqui descritos.</p>
-
-            <h3 id="interpretationTitle">Interpretação e Definições</h3>
-            <p id="interpretationText"><strong>Interpretação</strong><br>
-            As palavras com inicial maiúscula possuem significados definidos nas condições abaixo. As definições aplicam-se tanto no singular quanto no plural.</p>
-
-            <div class="definitions-box">
-                <p><strong id="defAccount">Conta:</strong> <span id="defAccountText">Registro único criado para acesso ao Serviço.</span></p>
-                <p><strong id="defAffiliate">Afiliada:</strong> <span id="defAffiliateText">Entidade que controla, é controlada ou está sob controle comum com a Empresa.</span></p>
-                <p><strong id="defCompany">Empresa:</strong> <span id="defCompanyText">Refere-se ao SCYPE, com sede no Brasil.</span></p>
-                <p><strong id="defCookies">Cookies:</strong> <span id="defCookiesText">Pequenos arquivos armazenados no seu dispositivo com informações de navegação.</span></p>
-                <p><strong id="defDevice">Dispositivo:</strong> <span id="defDeviceText">Qualquer equipamento (computador, celular, tablet) que acessa o Serviço.</span></p>
-                <p><strong id="defService">Serviço:</strong> <span id="defServiceText">O aplicativo SCYPE e site associado.</span></p>
-                <p><strong id="defYou">Você:</strong> <span id="defYouText">Pessoa física que utiliza o Serviço.</span></p>
-            </div>
-
-            <h3 id="collectionTitle">Coleta e Uso de Dados Pessoais</h3>
-            <p id="collectionText"><strong>Informações fornecidas pelo usuário:</strong> Nome, endereço de e-mail, foto de perfil, senha criptografada, conteúdo publicado (textos, imagens, vídeos) e eventuais metas ou registros inseridos no aplicativo.</p>
-            <p id="autoCollectText"><strong>Informações coletadas automaticamente:</strong> Modelo do dispositivo, sistema operacional, idioma, endereço IP, data/hora de acesso, estatísticas de uso e registros de desempenho.</p>
-
-            <h3 id="usageTitle">Uso dos Dados</h3>
-            <p id="usageText">O SCYPE utiliza as informações para: (i) criar e gerenciar sua conta; (ii) permitir interação dentro da plataforma; (iii) melhorar a experiência do usuário; (iv) garantir segurança e detectar atividades suspeitas; (v) desenvolver novos recursos e oferecer suporte.</p>
-
-            <h3 id="sharingTitle">Compartilhamento de Dados</h3>
-            <p id="sharingText">Não vendemos nem alugamos dados pessoais. Compartilhamos informações apenas com prestadores de serviços essenciais (hospedagem, processadores de pagamento) ou quando exigido por lei.</p>
-
-            <h3 id="securityTitle">Segurança e Retenção</h3>
-            <p id="securityText">Adotamos medidas técnicas e organizacionais para proteger seus dados. Você pode solicitar a exclusão da sua conta a qualquer momento. Algumas informações podem ser mantidas por obrigação legal.</p>
-
-            <h3 id="rightsTitle">Direitos do Titular</h3>
-            <p id="rightsText">Você tem direito a acessar, corrigir ou solicitar a eliminação de seus dados pessoais. Para isso, entre em contato pelo e-mail indicado abaixo.</p>
-
-            <h3 id="contactTitle">Contato</h3>
-            <p id="contactText"><strong>E-mail:</strong> scype@gmail.com</p>
-            <hr>
-            <p id="footerAgree" style="font-size: 0.85rem;">Ao continuar utilizando o SCYPE, você declara estar ciente e de acordo com esta Política de Privacidade.</p>
-        </div>
-    </div>
-
-    <!-- PAINEL: TERMOS DE USO -->
-    <div id="termsPanel" class="panel">
-        <div class="legal-content">
-            <h2 id="termsTitle">Termos de Uso</h2>
-            <p><strong id="termsLastUpdate">Última atualização:</strong> <span id="termsLastUpdateDate">16 de Junho de 2026</span></p>
-            <p id="termsIntro">Estes Termos de Uso regem o acesso e a utilização do aplicativo SCYPE. Ao criar uma conta ou usar o serviço, você concorda integralmente com estas condições.</p>
-
-            <h3 id="term1Title">1. Da Conta do Usuário</h3>
-            <p id="term1Text">Para utilizar determinados recursos, é necessário criar uma conta. Você é responsável por manter a confidencialidade de sua senha e por todas as atividades realizadas sob sua conta. As informações fornecidas devem ser verdadeiras, precisas e atualizadas.</p>
-
-            <h3 id="term2Title">2. Conduta e Conteúdo Proibido</h3>
-            <p id="term2Text">É expressamente proibido publicar ou compartilhar: conteúdo ilegal, discurso de ódio, assédio moral ou sexual, material com violência explícita, nudez ou atos obscenos, violação de direitos autorais, informações falsas ou enganosas, ou qualquer outro material que infrinja os direitos de terceiros. O SCYPE poderá remover qualquer conteúdo que viole estas regras, bem como suspender ou encerrar a conta do infrator, sem aviso prévio.</p>
-
-            <h3 id="term3Title">3. Propriedade Intelectual</h3>
-            <p id="term3Text">Todo o código, design, marcas, logos e elementos visuais do SCYPE são de propriedade exclusiva da Empresa. O usuário mantém a propriedade do conteúdo que publicar, mas concede ao SCYPE uma licença não exclusiva para armazenar, exibir e distribuir esse conteúdo no âmbito da plataforma.</p>
-
-            <h3 id="term4Title">4. Assinaturas e Pagamentos</h3>
-            <p id="term4Text">Recursos adicionais podem ser oferecidos mediante assinatura paga (planos mensais ou anuais). Os preços e benefícios são informados antes da contratação. O cancelamento deve ser realizado diretamente na loja de aplicativos (Google Play Store ou Apple App Store).</p>
-
-            <h3 id="term5Title">5. Limitação de Responsabilidade</h3>
-            <p id="term5Text">O SCYPE é uma plataforma de interação e engajamento. Não garantimos resultados específicos provenientes do uso do aplicativo. Em nenhum caso a Empresa será responsável por danos indiretos, incidentais ou consequenciais decorrentes do uso ou incapacidade de uso do Serviço.</p>
-
-            <h3 id="term6Title">6. Modificações nos Termos</h3>
-            <p id="term6Text">Podemos revisar estes Termos periodicamente. A versão atualizada será publicada nesta página com uma nova data de "Última atualização". O uso contínuo do aplicativo após as alterações constitui aceitação dos novos termos.</p>
-
-            <h3 id="term7Title">7. Contato</h3>
-            <p id="term7Text">Dúvidas ou notificações: <strong>scype@gmail.com</strong></p>
-        </div>
-    </div>
-
-    <!-- PAINEL: RESTAURAÇÃO DE COMPRA -->
-    <div id="restorePanel" class="panel">
-        <div class="legal-content">
-            <h2 id="restoreTitle">Política de Restauração de Compras</h2>
-            <p><strong id="restoreLastUpdate">Última atualização:</strong> <span id="restoreLastUpdateDate">16 de Junho de 2026</span></p>
-            <p id="restoreIntro">Esta política se aplica a usuários que adquiriram assinaturas ou recursos premium no SCYPE e desejam restaurar essas compras em outro dispositivo ou após reinstalação.</p>
-
-            <h3 id="restore1Title">1. Quem pode restaurar</h3>
-            <p id="restore1Text">Usuários que tenham realizado compras legítimas por meio da Google Play Store ou Apple App Store, utilizando o mesmo ID de conta.</p>
-
-            <h3 id="restore2Title">2. Como restaurar</h3>
-            <p id="restore2Text">No aplicativo SCYPE, acesse: <strong>Perfil → Configurações → Restaurar Compras</strong>. O sistema verificará automaticamente as compras associadas à sua conta da loja e reativará os benefícios premium.</p>
-
-            <h3 id="restore3Title">3. Requisitos necessários</h3>
-            <ul id="restore3List">
-                <li id="restore3Li1">Estar logado com a mesma conta Google/Apple utilizada na compra original;</li>
-                <li id="restore3Li2">Conexão estável com a internet;</li>
-                <li id="restore3Li3">A compra deve estar válida (não expirada ou reembolsada).</li>
-            </ul>
-
-            <h3 id="restore4Title">4. Limitações</h3>
-            <p id="restore4Text">A restauração não gera uma nova compra – apenas recupera compras já existentes. Não é possível transferir compras entre contas diferentes.</p>
-
-            <h3 id="restore5Title">5. Reembolsos</h3>
-            <p id="restore5Text">Pedidos de reembolso devem ser solicitados diretamente à Google Play Store ou Apple App Store, conforme as políticas de cada loja. O SCYPE não realiza reembolsos diretamente.</p>
-
-            <div class="restore-card">
-                <p style="font-weight: 500; margin-bottom: 0.5rem;" id="restoreCardTitle">🔄 Restauração integrada</p>
-                <p style="font-size: 0.85rem;" id="restoreCardDesc">Clique no botão abaixo para restaurar suas compras premium.</p>
-                <button id="restoreBtn" class="btn-restore">↻ Restaurar minhas compras</button>
-            </div>
-
-            <h3 id="restore6Title">6. Suporte</h3>
-            <p id="restore6Text">Se a restauração automática falhar, entre em contato com nosso suporte pelo e-mail <strong>scype@gmail.com</strong>, informando o comprovante de pagamento e o e-mail associado à sua conta. Faremos o possível para regularizar seu acesso premium.</p>
-        </div>
-    </div>
-
-    <div class="footer-note" id="footerNote">
-        SCYPE · Plataforma de engajamento · Documentos legais versão 2.0
-    </div>
-</div>
+<header class="topo">
+  <div class="largura marca-linha">
+    <div class="marca">SCYPE</div>
+    <select id="idioma" aria-label="Idioma / Language / Idioma">
+      <option value="pt">Português</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+    </select>
+  </div>
+</header>
+<div class="abas-fundo"><nav class="largura" id="abas"></nav></div>
+<main class="largura" id="conteudo">
+  <noscript><p>Scype: scype@gmail.com</p></noscript>
+</main>
+<footer><div class="largura" id="rodape"></div></footer>
 
 <script>
-    (function() {
-        // ========== SUPORTE A IDIOMAS ==========
-        function getLanguageFromURL() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const langParam = urlParams.get('lang');
-            if (langParam && ['pt', 'en', 'es'].includes(langParam)) {
-                return langParam;
-            }
-            const browserLang = navigator.language.split('-')[0];
-            if (browserLang === 'en') return 'en';
-            if (browserLang === 'es') return 'es';
-            return 'pt';
+(function () {
+  // ===== Dados a confirmar: muda só aqui =====
+  var CONFIG = {
+    email: 'scype@gmail.com',
+    entidade: 'SCYPE',
+    versao: '2026-11',
+    idadeMinima: 13
+  };
+
+  var ORDEM = ['ajuda', 'termos', 'privacidade', 'regras', 'moderacao', 'desafios', 'eliminar-conta'];
+  // Links antigos continuam a abrir alguma coisa útil
+  var ANTIGOS = { restauracao: 'termos', restore: 'termos', premium: 'termos', 'restaurar-compras': 'termos' };
+
+  var TEXTOS = {
+    pt: {
+      titulo: 'Scype - Ajuda e documentos legais',
+      rodape: 'Scype · Documentos legais, versão {versao}',
+      versao: 'Versão {versao} · Última atualização: novembro de 2026',
+      abas: { ajuda: 'Ajuda', termos: 'Termos', privacidade: 'Privacidade', regras: 'Regras', moderacao: 'Moderação', desafios: 'Desafios', 'eliminar-conta': 'Apagar conta' },
+      docs: {
+        ajuda: {
+          h: 'Como te podemos ajudar?',
+          c: '<div class="cartao"><h2>Fala connosco</h2><p>Dúvidas, problemas ou pedidos sobre os teus dados: escreve-nos e diz qual é o e-mail da tua conta.</p><a class="botao" href="mailto:{email}">{email}</a></div>' +
+             '<h2>Esqueci-me da palavra-passe</h2><p>No ecrã de iniciar sessão, toca em <strong>Esqueci-me da palavra-passe</strong>. Enviamos um link para o teu e-mail.</p>' +
+             '<h2>Denunciar conteúdo ou uma pessoa</h2><p>Abre o menu ⋯ ou a bandeira no conteúdo e toca em <strong>Denunciar</strong>. Sabe mais em <a href="#moderacao">Moderação</a>.</p>' +
+             '<h2>O Scype é pago?</h2><p>Hoje não há nenhuma cobrança. Quem cria conta recebe um presente de 7 dias grátis com tudo desbloqueado. Sabe mais nos <a href="#termos">Termos</a>.</p>' +
+             '<h2>Apagar a conta</h2><p>Na app: <strong>Perfil → Conta e segurança → Apagar conta</strong>. Sem a app, vê <a href="#eliminar-conta">Apagar conta</a>.</p>'
+        },
+        termos: {
+          h: 'Termos de Utilização',
+          c: '<h2>1. Quem somos</h2><p>O Scype é prestado por {entidade}. Contacto: <a href="mailto:{email}">{email}</a>.</p>' +
+             '<h2>2. O que é o Scype</h2><p>Uma rede social de desafios pessoais: crias ou entras em desafios de 7 a 60 dias, envias provas do teu progresso, avalias as provas de quem está contigo, ganhas XP e apareces no ranking do desafio. O Scype é uma ferramenta de motivação: <strong>não garante resultados</strong> e não substitui aconselhamento médico, psicológico, financeiro ou de outro profissional.</p>' +
+             '<h2>3. Conta</h2><ul><li>Tens de ter <strong>{idade} anos ou mais</strong> e confirmá-lo no registo.</li><li>Os dados que dás têm de ser verdadeiros. A conta é pessoal e intransmissível.</li><li>És responsável pela tua palavra-passe (mínimo de 8 caracteres) e pelo que acontece na tua conta.</li><li>Podes apagar a conta a qualquer momento (ver <a href="#eliminar-conta">Apagar conta</a>).</li></ul>' +
+             '<h2>4. Regras de utilização</h2><p>Tens de cumprir as <a href="#regras">Regras da Comunidade</a>. Desafios públicos que incentivem riscos para a saúde ou a segurança são bloqueados.</p>' +
+             '<h2>5. O teu conteúdo</h2><ul><li>O que publicas continua a ser teu.</li><li>Para o serviço funcionar, dás ao Scype uma licença não exclusiva, gratuita e limitada ao funcionamento da plataforma para guardar, mostrar a quem tem acesso, traduzir automaticamente e gerar as imagens de partilha que pedires. Termina quando apagas o conteúdo ou a conta, salvo cópias que a lei obrigue a guardar.</li><li>Só publicas o que tens direito a publicar. Se aparecerem outras pessoas, precisas da autorização delas.</li><li>As provas são vistas pelos participantes do desafio. Na Comunidade só aparecem se ativares "Partilhar na Comunidade" e forem aprovadas. <strong>Nunca és obrigado a mostrar a tua cara, o teu corpo ou a tua casa.</strong></li></ul>' +
+             '<h2>6. Moderação</h2><p>Qualquer pessoa pode denunciar conteúdo. O Scype pode remover conteúdo e suspender ou encerrar contas que violem estes Termos, explicando o motivo e permitindo contestar (ver <a href="#moderacao">Moderação</a>).</p>' +
+             '<h2>7. Preço</h2><p>Hoje o Scype não faz nenhuma cobrança nem pede dados de pagamento. Quem cria conta recebe um presente de 7 dias grátis com tudo desbloqueado. Se passar a haver pagamento, o preço e as condições aparecem de forma clara antes de qualquer cobrança, e nada é cobrado sem a tua confirmação. Estes Termos são atualizados nessa altura.</p>' +
+             '<h2>8. Responsabilidade</h2><p>O Scype é prestado "tal como está". Não respondemos por danos indiretos nem por decisões que tomes com base em desafios criados por outras pessoas, sem prejuízo dos direitos que a lei do consumidor te garante e que não podem ser afastados.</p>' +
+             '<h2>9. Alterações</h2><p>Podemos alterar estes Termos. Avisamos com antecedência razoável e, se a alteração for relevante, pedimos nova aceitação. Podes deixar de usar o Scype e apagar a conta a qualquer momento.</p>' +
+             '<h2>10. Lei aplicável</h2><p>Aplica-se a lei do país da sede, sem prejuízo das normas imperativas do país onde vives.</p>'
+        },
+        privacidade: {
+          h: 'Política de Privacidade',
+          c: '<h2>1. Quem trata os teus dados</h2><p>O responsável é {entidade}. Contacto para privacidade: <a href="mailto:{email}">{email}</a>.</p>' +
+             '<h2>2. Que dados recolhemos e porquê</h2><div class="tabela"><table><thead><tr><th>Dados</th><th>Para quê</th><th>Quem vê</th></tr></thead><tbody>' +
+             '<tr><td>E-mail e palavra-passe (guardada cifrada)</td><td>Criar e proteger a conta</td><td>Só tu e o Scype</td></tr>' +
+             '<tr><td>Nome de utilizador e foto</td><td>Identificar-te na comunidade</td><td>Pessoas com conta</td></tr>' +
+             '<tr><td>Sonho e preferências</td><td>Personalizar a app</td><td>O sonho, só quem tu permitires</td></tr>' +
+             '<tr><td>Desafios, tarefas e provas (fotos, vídeos, descrições)</td><td>Funcionamento dos desafios</td><td>Participantes do desafio; a Comunidade só se escolheres partilhar e a prova for aprovada</td></tr>' +
+             '<tr><td>Avaliações e comentários</td><td>Validar provas</td><td>Participantes do desafio</td></tr>' +
+             '<tr><td>XP, sequência, selos e ranking</td><td>Gamificação</td><td>Participantes do desafio; recorde e selos no teu perfil</td></tr>' +
+             '<tr><td>Mensagens e anexos</td><td>Conversas privadas</td><td>Tu e a pessoa com quem falas</td></tr>' +
+             '<tr><td>Apoios e bloqueios</td><td>Rede social e segurança</td><td>Apoios conforme as tuas definições; bloqueios só tu</td></tr>' +
+             '<tr><td>Denúncias</td><td>Moderação</td><td>Moderadores</td></tr>' +
+             '<tr><td>Confirmação de idade e aceitação dos Termos</td><td>Provar a aceitação e a idade mínima</td><td>Só o Scype</td></tr>' +
+             '<tr><td>Token de notificações, idioma e última atividade</td><td>Enviar avisos e mostrar "online"</td><td>Os outros só veem se estás online agora</td></tr>' +
+             '<tr><td>Dados técnicos e registos de falhas (mensagem do erro, ecrã, versão)</td><td>Segurança e correção de erros</td><td>Só o Scype e os fornecedores</td></tr>' +
+             '<tr><td>Estatísticas de uso, <strong>só se aceitares</strong> (nome do passo e data, nunca o que escreves). Desliga em Perfil → Privacidade</td><td>Perceber onde a app ajuda</td><td>Só o Scype</td></tr>' +
+             '<tr><td>Contagem anónima de cada ecrã antes de criar conta (sem identificar a pessoa nem o telemóvel)</td><td>Perceber onde as pessoas desistem</td><td>Só o Scype</td></tr>' +
+             '<tr><td>Alter Ego (nome, personalidade, foco, frase e o que preencheres). As respostas são geradas no teu telemóvel</td><td>Criar a tua versão ideal e as conversas com ela</td><td>Só tu</td></tr>' +
+             '<tr><td>Nome, e-mail e foto da conta Google, só se entrares com o Google</td><td>Criar a conta sem palavra-passe</td><td>Conforme as linhas acima</td></tr>' +
+             '</tbody></table></div><p><strong>Não usamos os teus dados para publicidade nem os vendemos.</strong></p>' +
+             '<h2>3. O que os outros veem</h2><p>Quem tem conta pode ver o teu nome de utilizador, foto, nível, recorde de sequência, número de selos, apoiantes (conforme as tuas definições) e as provas que escolheste partilhar. <strong>O e-mail nunca é mostrado.</strong></p>' +
+             '<h2>4. Fornecedores</h2><ul><li><strong>Supabase:</strong> base de dados, autenticação, ficheiros e funções do servidor.</li><li><strong>Google Firebase:</strong> notificações.</li><li><strong>Google e MyMemory:</strong> tradução automática dos textos que pedes para traduzir ou que são mostrados noutra língua.</li><li><strong>Google:</strong> entrar com a conta Google, se o escolheres.</li></ul><p>Estes serviços podem tratar dados fora do teu país, com as garantias que a lei exige.</p>' +
+             '<h2>5. Quanto tempo guardamos</h2><ul><li>Conta e conteúdos: enquanto a conta existir.</li><li>Ao apagares a conta, os dados e ficheiros são apagados de imediato. As cópias de segurança são substituídas periodicamente.</li><li>Registos de falhas e estatísticas: 90 dias. Ao apagares a conta, as estatísticas são apagadas e os registos de falhas deixam de estar ligados a ti.</li><li>Denúncias e decisões de moderação: o tempo necessário para defesa de direitos e cumprimento legal.</li></ul>' +
+             '<h2>6. Os teus direitos</h2><p>Podes pedir acesso, retificação, apagamento, limitação e portabilidade, e opor-te a tratamentos baseados em interesse legítimo. Muitos fazem-se na própria app. Para os restantes, escreve para <a href="mailto:{email}">{email}</a>. Podes também reclamar à autoridade de proteção de dados (no Brasil, a ANPD; em Portugal, a CNPD).</p>' +
+             '<h2>7. Idade mínima</h2><p>O Scype é para pessoas com <strong>{idade} anos ou mais</strong>. Se soubermos que uma conta pertence a alguém mais novo, apagamo-la.</p>' +
+             '<h2>8. Segurança</h2><p>Cada pessoa só vê o que lhe é permitido, com regras aplicadas no servidor. Fotos, vídeos das provas e anexos das conversas abrem com links temporários. Se houver uma violação de dados com risco para ti, avisamos-te nos prazos legais.</p>' +
+             '<h2>9. Alterações</h2><p>Se esta política mudar de forma relevante, avisamos na app e pedimos nova aceitação quando for necessário.</p>'
+        },
+        regras: {
+          h: 'Regras da Comunidade',
+          c: '<p>O Scype existe para te ajudar a cumprir o que te propões, com pessoas que torcem por ti. Estas regras protegem esse espaço.</p>' +
+             '<h2>Proibido</h2><ol><li><strong>Perigo para a saúde ou a segurança:</strong> jejum extremo, privação de sono, automutilação, desafios de asfixia, drogas, armas, apostas, condução perigosa.</li><li><strong>Assédio e ódio:</strong> insultos, ameaças, humilhação, discriminação, perseguição.</li><li><strong>Nudez, conteúdo sexual</strong> e violência explícita.</li><li><strong>Menores em risco:</strong> qualquer conteúdo que os exponha ou explore.</li><li><strong>Provas falsas</strong> ou copiadas, e votar contra provas verdadeiras por rivalidade.</li><li><strong>Spam,</strong> publicidade, burlas, contas falsas ou automatizadas.</li><li><strong>Conteúdo de outras pessoas sem autorização,</strong> incluindo direitos de autor.</li><li><strong>Dados pessoais de terceiros.</strong></li></ol>' +
+             '<h2>Boas práticas</h2><ul><li>Se um desafio te faz mal, para: a tua saúde vem primeiro.</li><li>Nunca pressiones ninguém a enviar fotos ou vídeos pessoais.</li><li>Podes mostrar o resultado sem mostrar a cara.</li><li>Dá força em vez de criticar.</li></ul>' +
+             '<h2>Se as regras forem violadas</h2><p>Remoção do conteúdo, aviso, limitação de funcionalidades, suspensão ou encerramento da conta, conforme a gravidade. Situações de perigo real ou crime podem ser comunicadas às autoridades.</p>'
+        },
+        moderacao: {
+          h: 'Denúncias e Moderação',
+          c: '<h2>Como denunciar</h2><p>Em qualquer prova, comentário, mensagem, desafio ou perfil: bandeira ou menu ⋯ → <strong>Denunciar</strong>. A denúncia é anónima para quem foi denunciado. Quem não tem conta pode pedir a remoção por direitos de autor em <a href="mailto:{email}">{email}</a>, identificando a obra e o conteúdo.</p>' +
+             '<h2>O que acontece a seguir</h2><ol><li>Deixas de ver o conteúdo denunciado de imediato.</li><li>Se <strong>3 pessoas diferentes</strong> denunciarem o mesmo conteúdo, ele fica oculto para todos até ser revisto.</li><li>Um moderador revê a denúncia. Perigo para a vida ou menores têm prioridade máxima.</li><li>Decisões possíveis: manter, remover, ocultar, avisar, suspender ou encerrar a conta.</li></ol>' +
+             '<h2>Contestar</h2><p>Se discordas de uma decisão, escreve para <a href="mailto:{email}">{email}</a> com o motivo. Sempre que possível, a contestação é revista por outra pessoa.</p>'
+        },
+        desafios: {
+          h: 'Desafios, provas e rankings',
+          c: '<h2>Participação</h2><ul><li>Participar é voluntário. Podes sair de um desafio quando quiseres.</li><li>Desafios privados só são vistos por quem foi convidado ou tem o código. Desafios públicos são vistos por quem tem conta.</li><li>Desafios públicos que incentivem riscos são bloqueados ou ocultados.</li></ul>' +
+             '<h2>Provas</h2><ul><li>Uma prova é uma foto, vídeo ou descrição do teu progresso. Não precisas de mostrar a cara, o corpo ou a casa.</li><li>Os participantes do desafio veem-nas e avaliam-nas.</li><li>Provas falsas ou de outras pessoas violam as regras.</li></ul>' +
+             '<h2>XP, sequência e ranking</h2><ul><li>O XP é calculado no servidor a partir das provas aprovadas e dos bónus.</li><li>Um dia sem prova num desafio ativo custa 15 XP nesse desafio.</li><li>A sequência conta os dias com prova. Há dias de proteção semanais para um dia mau não apagar tudo.</li><li>O ranking mostra o nome, a foto e o XP de quem está no desafio, apenas a quem está no desafio.</li></ul>' +
+             '<h2>Saúde</h2><p>O Scype não é aconselhamento médico. Antes de desafios de exercício, alimentação ou sono, fala com um profissional se tiveres dúvidas. Se um desafio te faz mal, para.</p>'
+        },
+        'eliminar-conta': {
+          h: 'Apagar a conta e os dados',
+          c: '<h2>Na app</h2><p><strong>Perfil → Conta e segurança → Apagar conta</strong> e confirmar. A operação não se desfaz. São apagados de imediato:</p><ul><li>o perfil, a foto e o sonho;</li><li>os desafios que criaste, as tuas participações, provas e ficheiros;</li><li>avaliações, comentários, reações, apoios, mensagens e anexos;</li><li>selos, sequência, Alter Ego, convites e preferências;</li><li>a conta de acesso (e-mail e palavra-passe).</li></ul>' +
+             '<h2>Sem a app</h2><p>Envia um e-mail para <a href="mailto:{email}?subject=Apagar%20conta%20Scype">{email}</a> a partir do endereço da conta, com o assunto "Apagar conta Scype". Confirmamos a identidade e apagamos a conta.</p>' +
+             '<h2>O que pode ficar</h2><ul><li>Cópias de segurança automáticas, até serem substituídas.</li><li>Registos de falhas, sem ligação a ti, durante até 90 dias.</li><li>Registos de denúncias e decisões de moderação, quando a lei o exija ou para defesa de direitos.</li></ul>'
         }
-
-        const currentLang = getLanguageFromURL();
-        
-        // ========== TRADUÇÕES COMPLETAS ==========
-        const translations = {
-            pt: {
-                tagline: "Documentos legais — transparência e compromisso",
-                tabPrivacy: "Política de Privacidade",
-                tabTerms: "Termos de Uso",
-                tabRestore: "Restauração de Compra",
-                privacyTitle: "Política de Privacidade",
-                termsTitle: "Termos de Uso",
-                restoreTitle: "Política de Restauração de Compras",
-                footer: "SCYPE · Plataforma de engajamento · Documentos legais versão 2.0",
-                restoreCardTitle: "🔄 Restauração integrada",
-                restoreCardDesc: "Clique no botão abaixo para restaurar suas compras premium.",
-                restoreBtn: "↻ Restaurar minhas compras",
-                checking: "⏳ Verificando compras...",
-                success: "✅ Compra restaurada com sucesso. Seus benefícios premium foram reativados.",
-                lastUpdate: "Última atualização:",
-                lastUpdateDate: "16 de Junho de 2026",
-                privacyIntro: "Esta Política de Privacidade descreve como o SCYPE coleta, utiliza e protege suas informações pessoais. Ao utilizar nosso aplicativo, você concorda com os termos aqui descritos.",
-                interpretationTitle: "Interpretação e Definições",
-                interpretationText: "As palavras com inicial maiúscula possuem significados definidos nas condições abaixo. As definições aplicam-se tanto no singular quanto no plural.",
-                defAccount: "Conta:",
-                defAccountText: "Registro único criado para acesso ao Serviço.",
-                defAffiliate: "Afiliada:",
-                defAffiliateText: "Entidade que controla, é controlada ou está sob controle comum com a Empresa.",
-                defCompany: "Empresa:",
-                defCompanyText: "Refere-se ao SCYPE, com sede no Brasil.",
-                defCookies: "Cookies:",
-                defCookiesText: "Pequenos arquivos armazenados no seu dispositivo com informações de navegação.",
-                defDevice: "Dispositivo:",
-                defDeviceText: "Qualquer equipamento (computador, celular, tablet) que acessa o Serviço.",
-                defService: "Serviço:",
-                defServiceText: "O aplicativo SCYPE e site associado.",
-                defYou: "Você:",
-                defYouText: "Pessoa física que utiliza o Serviço.",
-                collectionTitle: "Coleta e Uso de Dados Pessoais",
-                collectionText: "Informações fornecidas pelo usuário: Nome, endereço de e-mail, foto de perfil, senha criptografada, conteúdo publicado (textos, imagens, vídeos) e eventuais metas ou registros inseridos no aplicativo.",
-                autoCollectText: "Informações coletadas automaticamente: Modelo do dispositivo, sistema operacional, idioma, endereço IP, data/hora de acesso, estatísticas de uso e registros de desempenho.",
-                usageTitle: "Uso dos Dados",
-                usageText: "O SCYPE utiliza as informações para: (i) criar e gerenciar sua conta; (ii) permitir interação dentro da plataforma; (iii) melhorar a experiência do usuário; (iv) garantir segurança e detectar atividades suspeitas; (v) desenvolver novos recursos e oferecer suporte.",
-                sharingTitle: "Compartilhamento de Dados",
-                sharingText: "Não vendemos nem alugamos dados pessoais. Compartilhamos informações apenas com prestadores de serviços essenciais (hospedagem, processadores de pagamento) ou quando exigido por lei.",
-                securityTitle: "Segurança e Retenção",
-                securityText: "Adotamos medidas técnicas e organizacionais para proteger seus dados. Você pode solicitar a exclusão da sua conta a qualquer momento. Algumas informações podem ser mantidas por obrigação legal.",
-                rightsTitle: "Direitos do Titular",
-                rightsText: "Você tem direito a acessar, corrigir ou solicitar a eliminação de seus dados pessoais. Para isso, entre em contato pelo e-mail indicado abaixo.",
-                contactTitle: "Contato",
-                contactText: "E-mail: scype@gmail.com",
-                footerAgree: "Ao continuar utilizando o SCYPE, você declara estar ciente e de acordo com esta Política de Privacidade.",
-                termsIntro: "Estes Termos de Uso regem o acesso e a utilização do aplicativo SCYPE. Ao criar uma conta ou usar o serviço, você concorda integralmente com estas condições.",
-                term1Title: "1. Da Conta do Usuário",
-                term1Text: "Para utilizar determinados recursos, é necessário criar uma conta. Você é responsável por manter a confidencialidade de sua senha e por todas as atividades realizadas sob sua conta. As informações fornecidas devem ser verdadeiras, precisas e atualizadas.",
-                term2Title: "2. Conduta e Conteúdo Proibido",
-                term2Text: "É expressamente proibido publicar ou compartilhar: conteúdo ilegal, discurso de ódio, assédio moral ou sexual, material com violência explícita, nudez ou atos obscenos, violação de direitos autorais, informações falsas ou enganosas, ou qualquer outro material que infrinja os direitos de terceiros. O SCYPE poderá remover qualquer conteúdo que viole estas regras, bem como suspender ou encerrar a conta do infrator, sem aviso prévio.",
-                term3Title: "3. Propriedade Intelectual",
-                term3Text: "Todo o código, design, marcas, logos e elementos visuais do SCYPE são de propriedade exclusiva da Empresa. O usuário mantém a propriedade do conteúdo que publicar, mas concede ao SCYPE uma licença não exclusiva para armazenar, exibir e distribuir esse conteúdo no âmbito da plataforma.",
-                term4Title: "4. Assinaturas e Pagamentos",
-                term4Text: "Recursos adicionais podem ser oferecidos mediante assinatura paga (planos mensais ou anuais). Os preços e benefícios são informados antes da contratação. O cancelamento deve ser realizado diretamente na loja de aplicativos (Google Play Store ou Apple App Store).",
-                term5Title: "5. Limitação de Responsabilidade",
-                term5Text: "O SCYPE é uma plataforma de interação e engajamento. Não garantimos resultados específicos provenientes do uso do aplicativo. Em nenhum caso a Empresa será responsável por danos indiretos, incidentais ou consequenciais decorrentes do uso ou incapacidade de uso do Serviço.",
-                term6Title: "6. Modificações nos Termos",
-                term6Text: "Podemos revisar estes Termos periodicamente. A versão atualizada será publicada nesta página com uma nova data de \"Última atualização\". O uso contínuo do aplicativo após as alterações constitui aceitação dos novos termos.",
-                term7Title: "7. Contato",
-                term7Text: "Dúvidas ou notificações: scype@gmail.com",
-                restoreIntro: "Esta política se aplica a usuários que adquiriram assinaturas ou recursos premium no SCYPE e desejam restaurar essas compras em outro dispositivo ou após reinstalação.",
-                restore1Title: "1. Quem pode restaurar",
-                restore1Text: "Usuários que tenham realizado compras legítimas por meio da Google Play Store ou Apple App Store, utilizando o mesmo ID de conta.",
-                restore2Title: "2. Como restaurar",
-                restore2Text: "No aplicativo SCYPE, acesse: Perfil → Configurações → Restaurar Compras. O sistema verificará automaticamente as compras associadas à sua conta da loja e reativará os benefícios premium.",
-                restore3Title: "3. Requisitos necessários",
-                restore3Li1: "Estar logado com a mesma conta Google/Apple utilizada na compra original;",
-                restore3Li2: "Conexão estável com a internet;",
-                restore3Li3: "A compra deve estar válida (não expirada ou reembolsada).",
-                restore4Title: "4. Limitações",
-                restore4Text: "A restauração não gera uma nova compra – apenas recupera compras já existentes. Não é possível transferir compras entre contas diferentes.",
-                restore5Title: "5. Reembolsos",
-                restore5Text: "Pedidos de reembolso devem ser solicitados diretamente à Google Play Store ou Apple App Store, conforme as políticas de cada loja. O SCYPE não realiza reembolsos diretamente.",
-                restore6Title: "6. Suporte",
-                restore6Text: "Se a restauração automática falhar, entre em contato com nosso suporte pelo e-mail scype@gmail.com, informando o comprovante de pagamento e o e-mail associado à sua conta. Faremos o possível para regularizar seu acesso premium."
-            },
-            en: {
-                tagline: "Legal documents — transparency and commitment",
-                tabPrivacy: "Privacy Policy",
-                tabTerms: "Terms of Use",
-                tabRestore: "Purchase Restoration",
-                privacyTitle: "Privacy Policy",
-                termsTitle: "Terms of Use",
-                restoreTitle: "Purchase Restoration Policy",
-                footer: "SCYPE · Engagement Platform · Legal Documents v2.0",
-                restoreCardTitle: "🔄 Integrated Restoration",
-                restoreCardDesc: "Click the button below to restore your premium purchases.",
-                restoreBtn: "↻ Restore my purchases",
-                checking: "⏳ Checking purchases...",
-                success: "✅ Purchase restored successfully. Your premium benefits have been reactivated.",
-                lastUpdate: "Last updated:",
-                lastUpdateDate: "June 16, 2026",
-                privacyIntro: "This Privacy Policy describes how SCYPE collects, uses and protects your personal information. By using our application, you agree to the terms described herein.",
-                interpretationTitle: "Interpretation and Definitions",
-                interpretationText: "Words with initial capital letters have meanings defined in the conditions below. The definitions apply both in the singular and plural.",
-                defAccount: "Account:",
-                defAccountText: "Unique record created to access the Service.",
-                defAffiliate: "Affiliate:",
-                defAffiliateText: "An entity that controls, is controlled by or is under common control with the Company.",
-                defCompany: "Company:",
-                defCompanyText: "Refers to SCYPE, based in Brazil.",
-                defCookies: "Cookies:",
-                defCookiesText: "Small files placed on your device containing browsing information.",
-                defDevice: "Device:",
-                defDeviceText: "Any equipment (computer, cell phone, tablet) that accesses the Service.",
-                defService: "Service:",
-                defServiceText: "The SCYPE application and associated website.",
-                defYou: "You:",
-                defYouText: "Individual who uses the Service.",
-                collectionTitle: "Collection and Use of Personal Data",
-                collectionText: "Information provided by the user: Name, email address, profile photo, encrypted password, published content (texts, images, videos) and any goals or records inserted in the application.",
-                autoCollectText: "Information collected automatically: Device model, operating system, language, IP address, access date/time, usage statistics and performance logs.",
-                usageTitle: "Use of Data",
-                usageText: "SCYPE uses the information to: (i) create and manage your account; (ii) allow interaction within the platform; (iii) improve user experience; (iv) ensure security and detect suspicious activities; (v) develop new features and provide support.",
-                sharingTitle: "Data Sharing",
-                sharingText: "We do not sell or rent personal data. We share information only with essential service providers (hosting, payment processors) or when required by law.",
-                securityTitle: "Security and Retention",
-                securityText: "We adopt technical and organizational measures to protect your data. You can request deletion of your account at any time. Some information may be kept due to legal obligation.",
-                rightsTitle: "Data Subject Rights",
-                rightsText: "You have the right to access, correct or request deletion of your personal data. To do so, contact us using the email below.",
-                contactTitle: "Contact",
-                contactText: "Email: scype@gmail.com",
-                footerAgree: "By continuing to use SCYPE, you declare that you are aware of and agree to this Privacy Policy.",
-                termsIntro: "These Terms of Use govern access to and use of the SCYPE application. By creating an account or using the service, you fully agree to these conditions.",
-                term1Title: "1. User Account",
-                term1Text: "To use certain features you need to create an account. You are responsible for keeping your password confidential and for all activities carried out under your account. Information provided must be true, accurate and up to date.",
-                term2Title: "2. Conduct and Prohibited Content",
-                term2Text: "It is expressly forbidden to publish or share: illegal content, hate speech, moral or sexual harassment, material with explicit violence, nudity or obscene acts, copyright infringement, false or misleading information, or any other material that infringes the rights of third parties. SCYPE may remove any content that violates these rules, as well as suspend or terminate the offender's account without prior notice.",
-                term3Title: "3. Intellectual Property",
-                term3Text: "All code, design, trademarks, logos and visual elements of SCYPE are the exclusive property of the Company. The user retains ownership of the content they publish, but grants SCYPE a non-exclusive license to store, display and distribute this content within the platform.",
-                term4Title: "4. Subscriptions and Payments",
-                term4Text: "Additional features may be offered through paid subscriptions (monthly or annual plans). Prices and benefits are presented before contracting. Cancellation must be made directly through the application store (Google Play Store or Apple App Store).",
-                term5Title: "5. Limitation of Liability",
-                term5Text: "SCYPE is an interaction and engagement platform. We do not guarantee specific results from using the application. Under no circumstances shall the Company be liable for indirect, incidental or consequential damages arising from the use or inability to use the Service.",
-                term6Title: "6. Changes to Terms",
-                term6Text: "We may revise these Terms periodically. The updated version will be published on this page with a new 'Last updated' date. Continued use of the application after changes constitutes acceptance of the new terms.",
-                term7Title: "7. Contact",
-                term7Text: "Questions or notifications: scype@gmail.com",
-                restoreIntro: "This policy applies to users who have purchased subscriptions or premium features in SCYPE and wish to restore those purchases on another device or after reinstallation.",
-                restore1Title: "1. Who can restore",
-                restore1Text: "Users who have made legitimate purchases through the Google Play Store or Apple App Store, using the same account ID.",
-                restore2Title: "2. How to restore",
-                restore2Text: "In the SCYPE application, go to: Profile → Settings → Restore Purchases. The system will automatically verify purchases associated with your store account and reactivate premium benefits.",
-                restore3Title: "3. Requirements",
-                restore3Li1: "Be logged in with the same Google/Apple account used for the original purchase;",
-                restore3Li2: "Stable internet connection;",
-                restore3Li3: "The purchase must be valid (not expired or refunded).",
-                restore4Title: "4. Limitations",
-                restore4Text: "Restoration does not create a new purchase – it only recovers existing purchases. It is not possible to transfer purchases between different accounts.",
-                restore5Title: "5. Refunds",
-                restore5Text: "Refund requests must be made directly to the Google Play Store or Apple App Store, according to each store's policies. SCYPE does not process refunds directly.",
-                restore6Title: "6. Support",
-                restore6Text: "If automatic restoration fails, contact our support at scype@gmail.com, providing proof of payment and the email associated with your account. We will do our best to regularize your premium access."
-            },
-            es: {
-                tagline: "Documentos legales — transparencia y compromiso",
-                tabPrivacy: "Política de Privacidad",
-                tabTerms: "Términos de Uso",
-                tabRestore: "Restauración de Compra",
-                privacyTitle: "Política de Privacidad",
-                termsTitle: "Términos de Uso",
-                restoreTitle: "Política de Restauración de Compras",
-                footer: "SCYPE · Plataforma de engagement · Documentos legales v2.0",
-                restoreCardTitle: "🔄 Restauración integrada",
-                restoreCardDesc: "Haga clic en el botón de abajo para restaurar sus compras premium.",
-                restoreBtn: "↻ Restaurar mis compras",
-                checking: "⏳ Verificando compras...",
-                success: "✅ Compra restaurada con éxito. Tus beneficios premium han sido reactivados.",
-                lastUpdate: "Última actualización:",
-                lastUpdateDate: "16 de Junio de 2026",
-                privacyIntro: "Esta Política de Privacidad describe cómo SCYPE recopila, utiliza y protege su información personal. Al utilizar nuestra aplicación, usted acepta los términos aquí descritos.",
-                interpretationTitle: "Interpretación y Definiciones",
-                interpretationText: "Las palabras con mayúscula inicial tienen significados definidos en las condiciones siguientes. Las definiciones se aplican tanto en singular como en plural.",
-                defAccount: "Cuenta:",
-                defAccountText: "Registro único creado para acceder al Servicio.",
-                defAffiliate: "Afiliada:",
-                defAffiliateText: "Entidad que controla, es controlada o está bajo control común con la Empresa.",
-                defCompany: "Empresa:",
-                defCompanyText: "Se refiere a SCYPE, con sede en Brasil.",
-                defCookies: "Cookies:",
-                defCookiesText: "Pequeños archivos colocados en su dispositivo que contienen información de navegación.",
-                defDevice: "Dispositivo:",
-                defDeviceText: "Cualquier equipo (computadora, teléfono móvil, tableta) que accede al Servicio.",
-                defService: "Servicio:",
-                defServiceText: "La aplicación SCYPE y el sitio web asociado.",
-                defYou: "Usted:",
-                defYouText: "Persona física que utiliza el Servicio.",
-                collectionTitle: "Recopilación y Uso de Datos Personales",
-                collectionText: "Información proporcionada por el usuario: Nombre, correo electrónico, foto de perfil, contraseña cifrada, contenido publicado (textos, imágenes, videos) y posibles metas o registros insertados en la aplicación.",
-                autoCollectText: "Información recopilada automáticamente: Modelo del dispositivo, sistema operativo, idioma, dirección IP, fecha/hora de acceso, estadísticas de uso y registros de rendimiento.",
-                usageTitle: "Uso de los Datos",
-                usageText: "SCYPE utiliza la información para: (i) crear y administrar su cuenta; (ii) permitir la interacción dentro de la plataforma; (iii) mejorar la experiencia del usuario; (iv) garantizar la seguridad y detectar actividades sospechosas; (v) desarrollar nuevas funciones y brindar soporte.",
-                sharingTitle: "Compartición de Datos",
-                sharingText: "No vendemos ni alquilamos datos personales. Compartimos información solo con proveedores de servicios esenciales (alojamiento, procesadores de pago) o cuando lo exija la ley.",
-                securityTitle: "Seguridad y Retención",
-                securityText: "Adoptamos medidas técnicas y organizativas para proteger sus datos. Puede solicitar la eliminación de su cuenta en cualquier momento. Algunos datos pueden conservarse por obligación legal.",
-                rightsTitle: "Derechos del Titular",
-                rightsText: "Tiene derecho a acceder, corregir o solicitar la eliminación de sus datos personales. Para ello, comuníquese a través del correo electrónico indicado a continuación.",
-                contactTitle: "Contacto",
-                contactText: "Correo electrónico: scype@gmail.com",
-                footerAgree: "Al continuar utilizando SCYPE, declara estar informado y de acuerdo con esta Política de Privacidad.",
-                termsIntro: "Estos Términos de Uso rigen el acceso y uso de la aplicación SCYPE. Al crear una cuenta o utilizar el servicio, usted acepta plenamente estas condiciones.",
-                term1Title: "1. Cuenta de Usuario",
-                term1Text: "Para utilizar ciertas funciones es necesario crear una cuenta. Usted es responsable de mantener la confidencialidad de su contraseña y de todas las actividades realizadas bajo su cuenta. La información proporcionada debe ser veraz, precisa y actualizada.",
-                term2Title: "2. Conducta y Contenido Prohibido",
-                term2Text: "Queda expresamente prohibido publicar o compartir: contenido ilegal, discurso de odio, acoso moral o sexual, material con violencia explícita, desnudos o actos obscenos, violación de derechos de autor, información falsa o engañosa, o cualquier otro material que infrinja los derechos de terceros. SCYPE puede eliminar cualquier contenido que viole estas reglas, así como suspender o cancelar la cuenta del infractor, sin previo aviso.",
-                term3Title: "3. Propiedad Intelectual",
-                term3Text: "Todo el código, diseño, marcas, logotipos y elementos visuales de SCYPE son propiedad exclusiva de la Empresa. El usuario conserva la propiedad del contenido que publica, pero otorga a SCYPE una licencia no exclusiva para almacenar, mostrar y distribuir este contenido dentro de la plataforma.",
-                term4Title: "4. Suscripciones y Pagos",
-                term4Text: "Se pueden ofrecer funciones adicionales mediante suscripciones de pago (planes mensuales o anuales). Los precios y beneficios se presentan antes de la contratación. La cancelación debe realizarse directamente en la tienda de aplicaciones (Google Play Store o Apple App Store).",
-                term5Title: "5. Limitación de Responsabilidad",
-                term5Text: "SCYPE es una plataforma de interacción y compromiso. No garantizamos resultados específicos derivados del uso de la aplicación. En ningún caso la Empresa será responsable por daños indirectos, incidentales o consecuentes derivados del uso o la imposibilidad de usar el Servicio.",
-                term6Title: "6. Modificaciones de los Términos",
-                term6Text: "Podemos revisar estos Términos periódicamente. La versión actualizada se publicará en esta página con una nueva fecha de 'Última actualización'. El uso continuado de la aplicación después de los cambios constituye la aceptación de los nuevos términos.",
-                term7Title: "7. Contacto",
-                term7Text: "Preguntas o notificaciones: scype@gmail.com",
-                restoreIntro: "Esta política se aplica a los usuarios que hayan comprado suscripciones o funciones premium en SCYPE y deseen restaurar esas compras en otro dispositivo o después de reinstalar la aplicación.",
-                restore1Title: "1. Quién puede restaurar",
-                restore1Text: "Usuarios que hayan realizado compras legítimas a través de Google Play Store o Apple App Store, utilizando el mismo ID de cuenta.",
-                restore2Title: "2. Cómo restaurar",
-                restore2Text: "En la aplicación SCYPE, acceda a: Perfil → Configuración → Restaurar Compras. El sistema verificará automáticamente las compras asociadas a su cuenta de la tienda y reactivará los beneficios premium.",
-                restore3Title: "3. Requisitos necesarios",
-                restore3Li1: "Estar conectado con la misma cuenta de Google/Apple utilizada en la compra original;",
-                restore3Li2: "Conexión estable a internet;",
-                restore3Li3: "La compra debe ser válida (no caducada ni reembolsada).",
-                restore4Title: "4. Limitaciones",
-                restore4Text: "La restauración no genera una nueva compra – solo recupera compras existentes. No es posible transferir compras entre diferentes cuentas.",
-                restore5Title: "5. Reembolsos",
-                restore5Text: "Las solicitudes de reembolso deben realizarse directamente a Google Play Store o Apple App Store, según las políticas de cada tienda. SCYPE no procesa reembolsos directamente.",
-                restore6Title: "6. Soporte",
-                restore6Text: "Si la restauración automática falla, comuníquese con nuestro soporte a scype@gmail.com, proporcionando el comprobante de pago y el correo electrónico asociado a su cuenta. Haremos todo lo posible para regularizar su acceso premium."
-            }
-        };
-
-        // Aplicar traduções
-        function applyTranslations() {
-            const t = translations[currentLang];
-            if (!t) return;
-            
-            // Elementos principais
-            if (document.getElementById('tagline')) document.getElementById('tagline').textContent = t.tagline;
-            if (document.getElementById('tabPrivacy')) document.getElementById('tabPrivacy').textContent = t.tabPrivacy;
-            if (document.getElementById('tabTerms')) document.getElementById('tabTerms').textContent = t.tabTerms;
-            if (document.getElementById('tabRestore')) document.getElementById('tabRestore').textContent = t.tabRestore;
-            if (document.getElementById('footerNote')) document.getElementById('footerNote').textContent = t.footer;
-            if (document.getElementById('restoreCardTitle')) document.getElementById('restoreCardTitle').innerHTML = t.restoreCardTitle;
-            if (document.getElementById('restoreCardDesc')) document.getElementById('restoreCardDesc').textContent = t.restoreCardDesc;
-            
-            const restoreBtn = document.getElementById('restoreBtn');
-            if (restoreBtn) restoreBtn.innerHTML = t.restoreBtn;
-            
-            // Política de Privacidade
-            if (document.getElementById('privacyTitle')) document.getElementById('privacyTitle').textContent = t.privacyTitle;
-            if (document.getElementById('lastUpdateText')) document.getElementById('lastUpdateText').textContent = t.lastUpdate;
-            if (document.getElementById('lastUpdateDate')) document.getElementById('lastUpdateDate').textContent = t.lastUpdateDate;
-            if (document.getElementById('privacyIntro')) document.getElementById('privacyIntro').textContent = t.privacyIntro;
-            if (document.getElementById('interpretationTitle')) document.getElementById('interpretationTitle').textContent = t.interpretationTitle;
-            if (document.getElementById('interpretationText')) document.getElementById('interpretationText').innerHTML = '<strong>Interpretação</strong><br>' + t.interpretationText;
-            if (document.getElementById('defAccount')) document.getElementById('defAccount').innerHTML = t.defAccount + ' ';
-            if (document.getElementById('defAccountText')) document.getElementById('defAccountText').textContent = t.defAccountText;
-            if (document.getElementById('defAffiliate')) document.getElementById('defAffiliate').innerHTML = t.defAffiliate + ' ';
-            if (document.getElementById('defAffiliateText')) document.getElementById('defAffiliateText').textContent = t.defAffiliateText;
-            if (document.getElementById('defCompany')) document.getElementById('defCompany').innerHTML = t.defCompany + ' ';
-            if (document.getElementById('defCompanyText')) document.getElementById('defCompanyText').textContent = t.defCompanyText;
-            if (document.getElementById('defCookies')) document.getElementById('defCookies').innerHTML = t.defCookies + ' ';
-            if (document.getElementById('defCookiesText')) document.getElementById('defCookiesText').textContent = t.defCookiesText;
-            if (document.getElementById('defDevice')) document.getElementById('defDevice').innerHTML = t.defDevice + ' ';
-            if (document.getElementById('defDeviceText')) document.getElementById('defDeviceText').textContent = t.defDeviceText;
-            if (document.getElementById('defService')) document.getElementById('defService').innerHTML = t.defService + ' ';
-            if (document.getElementById('defServiceText')) document.getElementById('defServiceText').textContent = t.defServiceText;
-            if (document.getElementById('defYou')) document.getElementById('defYou').innerHTML = t.defYou + ' ';
-            if (document.getElementById('defYouText')) document.getElementById('defYouText').textContent = t.defYouText;
-            if (document.getElementById('collectionTitle')) document.getElementById('collectionTitle').textContent = t.collectionTitle;
-            if (document.getElementById('collectionText')) document.getElementById('collectionText').innerHTML = '<strong>' + t.collectionText.split(':')[0] + ':</strong> ' + t.collectionText.split(':')[1];
-            if (document.getElementById('autoCollectText')) document.getElementById('autoCollectText').innerHTML = '<strong>' + t.autoCollectText.split(':')[0] + ':</strong> ' + t.autoCollectText.split(':')[1];
-            if (document.getElementById('usageTitle')) document.getElementById('usageTitle').textContent = t.usageTitle;
-            if (document.getElementById('usageText')) document.getElementById('usageText').textContent = t.usageText;
-            if (document.getElementById('sharingTitle')) document.getElementById('sharingTitle').textContent = t.sharingTitle;
-            if (document.getElementById('sharingText')) document.getElementById('sharingText').textContent = t.sharingText;
-            if (document.getElementById('securityTitle')) document.getElementById('securityTitle').textContent = t.securityTitle;
-            if (document.getElementById('securityText')) document.getElementById('securityText').textContent = t.securityText;
-            if (document.getElementById('rightsTitle')) document.getElementById('rightsTitle').textContent = t.rightsTitle;
-            if (document.getElementById('rightsText')) document.getElementById('rightsText').textContent = t.rightsText;
-            if (document.getElementById('contactTitle')) document.getElementById('contactTitle').textContent = t.contactTitle;
-            if (document.getElementById('contactText')) document.getElementById('contactText').innerHTML = '<strong>E-mail:</strong> scype@gmail.com';
-            if (document.getElementById('footerAgree')) document.getElementById('footerAgree').textContent = t.footerAgree;
-            
-            // Termos de Uso
-            if (document.getElementById('termsTitle')) document.getElementById('termsTitle').textContent = t.termsTitle;
-            if (document.getElementById('termsLastUpdate')) document.getElementById('termsLastUpdate').textContent = t.lastUpdate;
-            if (document.getElementById('termsLastUpdateDate')) document.getElementById('termsLastUpdateDate').textContent = t.lastUpdateDate;
-            if (document.getElementById('termsIntro')) document.getElementById('termsIntro').textContent = t.termsIntro;
-            if (document.getElementById('term1Title')) document.getElementById('term1Title').textContent = t.term1Title;
-            if (document.getElementById('term1Text')) document.getElementById('term1Text').textContent = t.term1Text;
-            if (document.getElementById('term2Title')) document.getElementById('term2Title').textContent = t.term2Title;
-            if (document.getElementById('term2Text')) document.getElementById('term2Text').textContent = t.term2Text;
-            if (document.getElementById('term3Title')) document.getElementById('term3Title').textContent = t.term3Title;
-            if (document.getElementById('term3Text')) document.getElementById('term3Text').textContent = t.term3Text;
-            if (document.getElementById('term4Title')) document.getElementById('term4Title').textContent = t.term4Title;
-            if (document.getElementById('term4Text')) document.getElementById('term4Text').textContent = t.term4Text;
-            if (document.getElementById('term5Title')) document.getElementById('term5Title').textContent = t.term5Title;
-            if (document.getElementById('term5Text')) document.getElementById('term5Text').textContent = t.term5Text;
-            if (document.getElementById('term6Title')) document.getElementById('term6Title').textContent = t.term6Title;
-            if (document.getElementById('term6Text')) document.getElementById('term6Text').textContent = t.term6Text;
-            if (document.getElementById('term7Title')) document.getElementById('term7Title').textContent = t.term7Title;
-            if (document.getElementById('term7Text')) document.getElementById('term7Text').innerHTML = t.term7Text;
-            
-            // Restauração
-            if (document.getElementById('restoreTitle')) document.getElementById('restoreTitle').textContent = t.restoreTitle;
-            if (document.getElementById('restoreLastUpdate')) document.getElementById('restoreLastUpdate').textContent = t.lastUpdate;
-            if (document.getElementById('restoreLastUpdateDate')) document.getElementById('restoreLastUpdateDate').textContent = t.lastUpdateDate;
-            if (document.getElementById('restoreIntro')) document.getElementById('restoreIntro').textContent = t.restoreIntro;
-            if (document.getElementById('restore1Title')) document.getElementById('restore1Title').textContent = t.restore1Title;
-            if (document.getElementById('restore1Text')) document.getElementById('restore1Text').textContent = t.restore1Text;
-            if (document.getElementById('restore2Title')) document.getElementById('restore2Title').textContent = t.restore2Title;
-            if (document.getElementById('restore2Text')) document.getElementById('restore2Text').innerHTML = t.restore2Text;
-            if (document.getElementById('restore3Title')) document.getElementById('restore3Title').textContent = t.restore3Title;
-            if (document.getElementById('restore3Li1')) document.getElementById('restore3Li1').textContent = t.restore3Li1;
-            if (document.getElementById('restore3Li2')) document.getElementById('restore3Li2').textContent = t.restore3Li2;
-            if (document.getElementById('restore3Li3')) document.getElementById('restore3Li3').textContent = t.restore3Li3;
-            if (document.getElementById('restore4Title')) document.getElementById('restore4Title').textContent = t.restore4Title;
-            if (document.getElementById('restore4Text')) document.getElementById('restore4Text').textContent = t.restore4Text;
-            if (document.getElementById('restore5Title')) document.getElementById('restore5Title').textContent = t.restore5Title;
-            if (document.getElementById('restore5Text')) document.getElementById('restore5Text').textContent = t.restore5Text;
-            if (document.getElementById('restore6Title')) document.getElementById('restore6Title').textContent = t.restore6Title;
-            if (document.getElementById('restore6Text')) document.getElementById('restore6Text').innerHTML = t.restore6Text;
+      }
+    },
+    en: {
+      titulo: 'Scype - Help and legal documents',
+      rodape: 'Scype · Legal documents, version {versao}',
+      versao: 'Version {versao} · Last updated: November 2026',
+      abas: { ajuda: 'Help', termos: 'Terms', privacidade: 'Privacy', regras: 'Rules', moderacao: 'Moderation', desafios: 'Challenges', 'eliminar-conta': 'Delete account' },
+      docs: {
+        ajuda: {
+          h: 'How can we help?',
+          c: '<div class="cartao"><h2>Talk to us</h2><p>Questions, problems or requests about your data: write to us and tell us your account email.</p><a class="botao" href="mailto:{email}">{email}</a></div>' +
+             '<h2>I forgot my password</h2><p>On the sign-in screen, tap <strong>I forgot my password</strong>. We send a link to your email.</p>' +
+             '<h2>Report content or a person</h2><p>Open the ⋯ menu or the flag on the content and tap <strong>Report</strong>. Learn more in <a href="#moderacao">Moderation</a>.</p>' +
+             '<h2>Is Scype paid?</h2><p>There are no charges today. Anyone who creates an account gets a gift of 7 free days with everything unlocked. Learn more in the <a href="#termos">Terms</a>.</p>' +
+             '<h2>Delete your account</h2><p>In the app: <strong>Profile → Account and security → Delete account</strong>. Without the app, see <a href="#eliminar-conta">Delete account</a>.</p>'
+        },
+        termos: {
+          h: 'Terms of Use',
+          c: '<h2>1. Who we are</h2><p>Scype is provided by {entidade}. Contact: <a href="mailto:{email}">{email}</a>.</p>' +
+             '<h2>2. What Scype is</h2><p>A social network of personal challenges: you create or join challenges of 7 to 60 days, send proof of your progress, review the proof of the people with you, earn XP and appear in the challenge ranking. Scype is a motivation tool: it <strong>does not guarantee results</strong> and does not replace medical, psychological, financial or other professional advice.</p>' +
+             '<h2>3. Account</h2><ul><li>You must be <strong>{idade} or older</strong> and confirm this when signing up.</li><li>The information you give must be true. Your account is personal and non-transferable.</li><li>You are responsible for your password (at least 8 characters) and for what happens in your account.</li><li>You can delete your account at any time (see <a href="#eliminar-conta">Delete account</a>).</li></ul>' +
+             '<h2>4. Rules of use</h2><p>You must follow the <a href="#regras">Community Rules</a>. Public challenges that encourage health or safety risks are blocked.</p>' +
+             '<h2>5. Your content</h2><ul><li>What you publish remains yours.</li><li>For the service to work, you give Scype a non-exclusive, free licence, limited to running the platform, to store it, show it to those with access, translate it automatically and generate the share images you request. It ends when you delete the content or the account, except for copies the law requires us to keep.</li><li>Only publish what you have the right to publish. If other people appear, you need their permission.</li><li>Proof is seen by the challenge participants. It only appears in the Community if you turn on "Share to Community" and it is approved. <strong>You are never required to show your face, body or home.</strong></li></ul>' +
+             '<h2>6. Moderation</h2><p>Anyone can report content. Scype may remove content and suspend or close accounts that break these Terms, explaining why and allowing an appeal (see <a href="#moderacao">Moderation</a>).</p>' +
+             '<h2>7. Price</h2><p>Today Scype makes no charges and does not ask for payment details. Anyone who creates an account gets a gift of 7 free days with everything unlocked. If payment is introduced, the price and conditions will be shown clearly before any charge, and nothing will be charged without your confirmation. These Terms will be updated at that time.</p>' +
+             '<h2>8. Liability</h2><p>Scype is provided "as is". We are not liable for indirect damages or for decisions you make based on challenges created by other people, without prejudice to the consumer rights that the law guarantees you and that cannot be waived.</p>' +
+             '<h2>9. Changes</h2><p>We may change these Terms. We give reasonable notice and, if the change is relevant, ask you to accept again. You can stop using Scype and delete your account at any time.</p>' +
+             '<h2>10. Applicable law</h2><p>The law of the country of establishment applies, without prejudice to the mandatory rules of the country where you live.</p>'
+        },
+        privacidade: {
+          h: 'Privacy Policy',
+          c: '<h2>1. Who handles your data</h2><p>The controller is {entidade}. Privacy contact: <a href="mailto:{email}">{email}</a>.</p>' +
+             '<h2>2. What data we collect and why</h2><div class="tabela"><table><thead><tr><th>Data</th><th>Why</th><th>Who sees it</th></tr></thead><tbody>' +
+             '<tr><td>Email and password (stored encrypted)</td><td>Create and protect the account</td><td>Only you and Scype</td></tr>' +
+             '<tr><td>Username and photo</td><td>Identify you in the community</td><td>People with an account</td></tr>' +
+             '<tr><td>Dream and preferences</td><td>Personalise the app</td><td>The dream, only whoever you allow</td></tr>' +
+             '<tr><td>Challenges, tasks and proof (photos, videos, descriptions)</td><td>Running the challenges</td><td>Challenge participants; the Community only if you choose to share and the proof is approved</td></tr>' +
+             '<tr><td>Reviews and comments</td><td>Validate proof</td><td>Challenge participants</td></tr>' +
+             '<tr><td>XP, streak, badges and ranking</td><td>Gamification</td><td>Challenge participants; record and badges on your profile</td></tr>' +
+             '<tr><td>Messages and attachments</td><td>Private conversations</td><td>You and the person you talk to</td></tr>' +
+             '<tr><td>Supports and blocks</td><td>Social network and safety</td><td>Supports per your settings; blocks only you</td></tr>' +
+             '<tr><td>Reports</td><td>Moderation</td><td>Moderators</td></tr>' +
+             '<tr><td>Age confirmation and acceptance of the Terms</td><td>Prove acceptance and minimum age</td><td>Only Scype</td></tr>' +
+             '<tr><td>Notification token, language and last activity</td><td>Send alerts and show "online"</td><td>Others only see whether you are online now</td></tr>' +
+             '<tr><td>Technical data and crash logs (error message, screen, version)</td><td>Security and bug fixing</td><td>Only Scype and its providers</td></tr>' +
+             '<tr><td>Usage statistics, <strong>only if you accept</strong> (step name and date, never what you write). Turn off in Profile → Privacy</td><td>Understand where the app helps</td><td>Only Scype</td></tr>' +
+             '<tr><td>Anonymous count of each screen before creating an account (does not identify the person or phone)</td><td>Understand where people give up</td><td>Only Scype</td></tr>' +
+             '<tr><td>Alter Ego (name, personality, focus, phrase and whatever you fill in). Replies are generated on your phone</td><td>Create your ideal self and the conversations with it</td><td>Only you</td></tr>' +
+             '<tr><td>Name, email and photo from your Google account, only if you sign in with Google</td><td>Create the account without a password</td><td>As in the rows above</td></tr>' +
+             '</tbody></table></div><p><strong>We do not use your data for advertising and we do not sell it.</strong></p>' +
+             '<h2>3. What others see</h2><p>People with an account can see your username, photo, level, streak record, number of badges, supports (per your settings) and the proof you chose to share. <strong>Your email is never shown.</strong></p>' +
+             '<h2>4. Providers</h2><ul><li><strong>Supabase:</strong> database, authentication, files and server functions.</li><li><strong>Google Firebase:</strong> notifications.</li><li><strong>Google and MyMemory:</strong> automatic translation of text you ask to translate or that is shown in another language.</li><li><strong>Google:</strong> sign-in with a Google account, if you choose it.</li></ul><p>These services may process data outside your country, with the safeguards the law requires.</p>' +
+             '<h2>5. How long we keep data</h2><ul><li>Account and content: while the account exists.</li><li>When you delete your account, data and files are deleted immediately. Backups are replaced periodically.</li><li>Crash logs and statistics: 90 days. When you delete your account, statistics are deleted and crash logs are no longer linked to you.</li><li>Reports and moderation decisions: as long as needed to defend rights and comply with the law.</li></ul>' +
+             '<h2>6. Your rights</h2><p>You can request access, correction, deletion, restriction and portability, and object to processing based on legitimate interest. Many of these can be done in the app. For the rest, write to <a href="mailto:{email}">{email}</a>. You can also complain to the data protection authority where you live.</p>' +
+             '<h2>7. Minimum age</h2><p>Scype is for people aged <strong>{idade} or older</strong>. If we learn that an account belongs to someone younger, we delete it.</p>' +
+             '<h2>8. Security</h2><p>Each person only sees what they are allowed to, with rules enforced on the server. Photos, proof videos and chat attachments open through temporary links. If a data breach puts you at risk, we notify you within the legal deadlines.</p>' +
+             '<h2>9. Changes</h2><p>If this policy changes in a relevant way, we tell you in the app and ask you to accept again when necessary.</p>'
+        },
+        regras: {
+          h: 'Community Rules',
+          c: '<p>Scype exists to help you do what you set out to do, with people cheering for you. These rules protect that space.</p>' +
+             '<h2>Not allowed</h2><ol><li><strong>Danger to health or safety:</strong> extreme fasting, sleep deprivation, self-harm, choking challenges, drugs, weapons, gambling, dangerous driving.</li><li><strong>Harassment and hate:</strong> insults, threats, humiliation, discrimination, stalking.</li><li><strong>Nudity, sexual content</strong> and graphic violence.</li><li><strong>Minors at risk:</strong> any content that exposes or exploits them.</li><li><strong>False proof</strong> or copied proof, and voting against real proof out of rivalry.</li><li><strong>Spam,</strong> advertising, scams, fake or automated accounts.</li><li><strong>Other people\'s content without permission,</strong> including copyright.</li><li><strong>Personal data of others.</strong></li></ol>' +
+             '<h2>Good practice</h2><ul><li>If a challenge harms you, stop: your health comes first.</li><li>Never pressure anyone to send personal photos or videos.</li><li>You can show the result without showing your face.</li><li>Encourage instead of criticising.</li></ul>' +
+             '<h2>If the rules are broken</h2><p>Content removal, a warning, limited features, suspension or account closure, depending on severity. Real danger or crime may be reported to the authorities.</p>'
+        },
+        moderacao: {
+          h: 'Reports and Moderation',
+          c: '<h2>How to report</h2><p>On any proof, comment, message, challenge or profile: flag or ⋯ menu → <strong>Report</strong>. Reports are anonymous to the person reported. People without an account can request copyright removal at <a href="mailto:{email}">{email}</a>, identifying the work and the content.</p>' +
+             '<h2>What happens next</h2><ol><li>You stop seeing the reported content immediately.</li><li>If <strong>3 different people</strong> report the same content, it is hidden for everyone until reviewed.</li><li>A moderator reviews the report. Danger to life or minors has top priority.</li><li>Possible decisions: keep, remove, hide, warn, suspend or close the account.</li></ol>' +
+             '<h2>Appeal</h2><p>If you disagree with a decision, write to <a href="mailto:{email}">{email}</a> with your reason. Whenever possible, a different person reviews the appeal.</p>'
+        },
+        desafios: {
+          h: 'Challenges, proof and rankings',
+          c: '<h2>Taking part</h2><ul><li>Taking part is voluntary. You can leave a challenge whenever you want.</li><li>Private challenges are only seen by those invited or with the code. Public challenges are seen by people with an account.</li><li>Public challenges that encourage risks are blocked or hidden.</li></ul>' +
+             '<h2>Proof</h2><ul><li>Proof is a photo, video or description of your progress. You do not need to show your face, body or home.</li><li>Challenge participants see and review it.</li><li>False proof or proof from other people breaks the rules.</li></ul>' +
+             '<h2>XP, streak and ranking</h2><ul><li>XP is calculated on the server from approved proof and bonuses.</li><li>A day without proof in an active challenge costs 15 XP in that challenge.</li><li>The streak counts days with proof. Weekly protection days stop one bad day from erasing everything.</li><li>The ranking shows the name, photo and XP of those in the challenge, only to those in the challenge.</li></ul>' +
+             '<h2>Health</h2><p>Scype is not medical advice. Before exercise, food or sleep challenges, talk to a professional if in doubt. If a challenge harms you, stop.</p>'
+        },
+        'eliminar-conta': {
+          h: 'Delete your account and data',
+          c: '<h2>In the app</h2><p><strong>Profile → Account and security → Delete account</strong> and confirm. This cannot be undone. The following are deleted immediately:</p><ul><li>your profile, photo and dream;</li><li>the challenges you created, your participation, proof and files;</li><li>reviews, comments, reactions, supports, messages and attachments;</li><li>badges, streak, Alter Ego, invitations and preferences;</li><li>your login account (email and password).</li></ul>' +
+             '<h2>Without the app</h2><p>Send an email to <a href="mailto:{email}?subject=Delete%20Scype%20account">{email}</a> from your account address, with the subject "Delete Scype account". We confirm your identity and delete the account.</p>' +
+             '<h2>What may remain</h2><ul><li>Automatic backups, until they are replaced.</li><li>Crash logs, not linked to you, for up to 90 days.</li><li>Records of reports and moderation decisions, when required by law or to defend rights.</li></ul>'
         }
-
-        applyTranslations();
-
-        // ========== SISTEMA DE ABAS COM HASH ==========
-        const tabs = document.querySelectorAll('.tab-btn');
-        const panels = {
-            privacy: document.getElementById('privacyPanel'),
-            terms: document.getElementById('termsPanel'),
-            restore: document.getElementById('restorePanel')
-        };
-
-        const hashMap = {
-            'privacidade': 'privacy',
-            'termos': 'terms',
-            'restauracao': 'restore',
-            'restore': 'restore'
-        };
-
-        function activatePanel(panelId) {
-            Object.values(panels).forEach(p => p.classList.remove('active-panel'));
-            tabs.forEach(btn => btn.classList.remove('active'));
-            if (panels[panelId]) panels[panelId].classList.add('active-panel');
-            const activeBtn = Array.from(tabs).find(btn => btn.getAttribute('data-tab') === panelId);
-            if (activeBtn) activeBtn.classList.add('active');
+      }
+    },
+    es: {
+      titulo: 'Scype - Ayuda y documentos legales',
+      rodape: 'Scype · Documentos legales, versión {versao}',
+      versao: 'Versión {versao} · Última actualización: noviembre de 2026',
+      abas: { ajuda: 'Ayuda', termos: 'Términos', privacidade: 'Privacidad', regras: 'Normas', moderacao: 'Moderación', desafios: 'Desafíos', 'eliminar-conta': 'Eliminar cuenta' },
+      docs: {
+        ajuda: {
+          h: '¿Cómo podemos ayudarte?',
+          c: '<div class="cartao"><h2>Habla con nosotros</h2><p>Dudas, problemas o solicitudes sobre tus datos: escríbenos e indica el correo de tu cuenta.</p><a class="botao" href="mailto:{email}">{email}</a></div>' +
+             '<h2>He olvidado mi contraseña</h2><p>En la pantalla de inicio de sesión, toca <strong>He olvidado mi contraseña</strong>. Te enviamos un enlace a tu correo.</p>' +
+             '<h2>Denunciar contenido o a una persona</h2><p>Abre el menú ⋯ o la bandera en el contenido y toca <strong>Denunciar</strong>. Más información en <a href="#moderacao">Moderación</a>.</p>' +
+             '<h2>¿Scype es de pago?</h2><p>Hoy no hay ningún cobro. Quien crea una cuenta recibe un regalo de 7 días gratis con todo desbloqueado. Más información en los <a href="#termos">Términos</a>.</p>' +
+             '<h2>Eliminar la cuenta</h2><p>En la app: <strong>Perfil → Cuenta y seguridad → Eliminar cuenta</strong>. Sin la app, consulta <a href="#eliminar-conta">Eliminar cuenta</a>.</p>'
+        },
+        termos: {
+          h: 'Términos de Uso',
+          c: '<h2>1. Quiénes somos</h2><p>Scype es prestado por {entidade}. Contacto: <a href="mailto:{email}">{email}</a>.</p>' +
+             '<h2>2. Qué es Scype</h2><p>Una red social de desafíos personales: creas o entras en desafíos de 7 a 60 días, envías pruebas de tu progreso, evalúas las pruebas de quienes están contigo, ganas XP y apareces en el ranking del desafío. Scype es una herramienta de motivación: <strong>no garantiza resultados</strong> y no sustituye el consejo médico, psicológico, financiero o de otro profesional.</p>' +
+             '<h2>3. Cuenta</h2><ul><li>Debes tener <strong>{idade} años o más</strong> y confirmarlo al registrarte.</li><li>Los datos que das deben ser verdaderos. La cuenta es personal e intransferible.</li><li>Eres responsable de tu contraseña (mínimo 8 caracteres) y de lo que ocurra en tu cuenta.</li><li>Puedes eliminar la cuenta en cualquier momento (ver <a href="#eliminar-conta">Eliminar cuenta</a>).</li></ul>' +
+             '<h2>4. Normas de uso</h2><p>Debes cumplir las <a href="#regras">Normas de la Comunidad</a>. Los desafíos públicos que incentiven riesgos para la salud o la seguridad se bloquean.</p>' +
+             '<h2>5. Tu contenido</h2><ul><li>Lo que publicas sigue siendo tuyo.</li><li>Para que el servicio funcione, das a Scype una licencia no exclusiva, gratuita y limitada al funcionamiento de la plataforma para guardarlo, mostrarlo a quien tiene acceso, traducirlo automáticamente y generar las imágenes para compartir que pidas. Termina cuando eliminas el contenido o la cuenta, salvo copias que la ley obligue a conservar.</li><li>Publica solo lo que tienes derecho a publicar. Si aparecen otras personas, necesitas su autorización.</li><li>Las pruebas las ven los participantes del desafío. En la Comunidad solo aparecen si activas "Compartir en la Comunidad" y son aprobadas. <strong>Nunca estás obligado a mostrar tu cara, tu cuerpo o tu casa.</strong></li></ul>' +
+             '<h2>6. Moderación</h2><p>Cualquier persona puede denunciar contenido. Scype puede eliminar contenido y suspender o cerrar cuentas que incumplan estos Términos, explicando el motivo y permitiendo reclamar (ver <a href="#moderacao">Moderación</a>).</p>' +
+             '<h2>7. Precio</h2><p>Hoy Scype no realiza ningún cobro ni pide datos de pago. Quien crea una cuenta recibe un regalo de 7 días gratis con todo desbloqueado. Si llega a haber pagos, el precio y las condiciones aparecerán con claridad antes de cualquier cobro, y no se cobrará nada sin tu confirmación. Estos Términos se actualizarán en ese momento.</p>' +
+             '<h2>8. Responsabilidad</h2><p>Scype se presta "tal cual". No respondemos por daños indirectos ni por decisiones que tomes basándote en desafíos creados por otras personas, sin perjuicio de los derechos que la ley del consumidor te garantiza y que no pueden excluirse.</p>' +
+             '<h2>9. Cambios</h2><p>Podemos cambiar estos Términos. Avisamos con antelación razonable y, si el cambio es relevante, pedimos una nueva aceptación. Puedes dejar de usar Scype y eliminar la cuenta en cualquier momento.</p>' +
+             '<h2>10. Ley aplicable</h2><p>Se aplica la ley del país de la sede, sin perjuicio de las normas imperativas del país donde vives.</p>'
+        },
+        privacidade: {
+          h: 'Política de Privacidad',
+          c: '<h2>1. Quién trata tus datos</h2><p>El responsable es {entidade}. Contacto de privacidad: <a href="mailto:{email}">{email}</a>.</p>' +
+             '<h2>2. Qué datos recogemos y por qué</h2><div class="tabela"><table><thead><tr><th>Datos</th><th>Para qué</th><th>Quién los ve</th></tr></thead><tbody>' +
+             '<tr><td>Correo y contraseña (guardada cifrada)</td><td>Crear y proteger la cuenta</td><td>Solo tú y Scype</td></tr>' +
+             '<tr><td>Nombre de usuario y foto</td><td>Identificarte en la comunidad</td><td>Personas con cuenta</td></tr>' +
+             '<tr><td>Sueño y preferencias</td><td>Personalizar la app</td><td>El sueño, solo quien permitas</td></tr>' +
+             '<tr><td>Desafíos, tareas y pruebas (fotos, vídeos, descripciones)</td><td>Funcionamiento de los desafíos</td><td>Participantes del desafío; la Comunidad solo si eliges compartir y la prueba se aprueba</td></tr>' +
+             '<tr><td>Evaluaciones y comentarios</td><td>Validar pruebas</td><td>Participantes del desafío</td></tr>' +
+             '<tr><td>XP, racha, insignias y ranking</td><td>Gamificación</td><td>Participantes del desafío; récord e insignias en tu perfil</td></tr>' +
+             '<tr><td>Mensajes y adjuntos</td><td>Conversaciones privadas</td><td>Tú y la persona con quien hablas</td></tr>' +
+             '<tr><td>Apoyos y bloqueos</td><td>Red social y seguridad</td><td>Apoyos según tus ajustes; bloqueos solo tú</td></tr>' +
+             '<tr><td>Denuncias</td><td>Moderación</td><td>Moderadores</td></tr>' +
+             '<tr><td>Confirmación de edad y aceptación de los Términos</td><td>Probar la aceptación y la edad mínima</td><td>Solo Scype</td></tr>' +
+             '<tr><td>Token de notificaciones, idioma y última actividad</td><td>Enviar avisos y mostrar "en línea"</td><td>Los demás solo ven si estás en línea ahora</td></tr>' +
+             '<tr><td>Datos técnicos y registros de fallos (mensaje de error, pantalla, versión)</td><td>Seguridad y corrección de errores</td><td>Solo Scype y sus proveedores</td></tr>' +
+             '<tr><td>Estadísticas de uso, <strong>solo si aceptas</strong> (nombre del paso y fecha, nunca lo que escribes). Desactívalas en Perfil → Privacidad</td><td>Entender dónde ayuda la app</td><td>Solo Scype</td></tr>' +
+             '<tr><td>Recuento anónimo de cada pantalla antes de crear la cuenta (sin identificar a la persona ni el teléfono)</td><td>Entender dónde abandonan las personas</td><td>Solo Scype</td></tr>' +
+             '<tr><td>Alter Ego (nombre, personalidad, foco, frase y lo que rellenes). Las respuestas se generan en tu teléfono</td><td>Crear tu versión ideal y las conversaciones con ella</td><td>Solo tú</td></tr>' +
+             '<tr><td>Nombre, correo y foto de la cuenta de Google, solo si entras con Google</td><td>Crear la cuenta sin contraseña</td><td>Según las filas anteriores</td></tr>' +
+             '</tbody></table></div><p><strong>No usamos tus datos para publicidad ni los vendemos.</strong></p>' +
+             '<h2>3. Qué ven los demás</h2><p>Quien tiene cuenta puede ver tu nombre de usuario, foto, nivel, récord de racha, número de insignias, apoyos (según tus ajustes) y las pruebas que elegiste compartir. <strong>El correo nunca se muestra.</strong></p>' +
+             '<h2>4. Proveedores</h2><ul><li><strong>Supabase:</strong> base de datos, autenticación, archivos y funciones del servidor.</li><li><strong>Google Firebase:</strong> notificaciones.</li><li><strong>Google y MyMemory:</strong> traducción automática de los textos que pides traducir o que se muestran en otro idioma.</li><li><strong>Google:</strong> entrar con la cuenta de Google, si lo eliges.</li></ul><p>Estos servicios pueden tratar datos fuera de tu país, con las garantías que exige la ley.</p>' +
+             '<h2>5. Cuánto tiempo guardamos</h2><ul><li>Cuenta y contenidos: mientras exista la cuenta.</li><li>Al eliminar la cuenta, los datos y archivos se borran de inmediato. Las copias de seguridad se sustituyen periódicamente.</li><li>Registros de fallos y estadísticas: 90 días. Al eliminar la cuenta, las estadísticas se borran y los registros de fallos dejan de estar vinculados a ti.</li><li>Denuncias y decisiones de moderación: el tiempo necesario para defender derechos y cumplir la ley.</li></ul>' +
+             '<h2>6. Tus derechos</h2><p>Puedes pedir acceso, rectificación, supresión, limitación y portabilidad, y oponerte a tratamientos basados en interés legítimo. Muchos se hacen en la propia app. Para los demás, escribe a <a href="mailto:{email}">{email}</a>. También puedes reclamar ante la autoridad de protección de datos de tu país.</p>' +
+             '<h2>7. Edad mínima</h2><p>Scype es para personas de <strong>{idade} años o más</strong>. Si sabemos que una cuenta pertenece a alguien menor, la eliminamos.</p>' +
+             '<h2>8. Seguridad</h2><p>Cada persona solo ve lo que se le permite, con reglas aplicadas en el servidor. Las fotos, los vídeos de las pruebas y los adjuntos de las conversaciones se abren con enlaces temporales. Si una violación de datos supone un riesgo para ti, te avisamos en los plazos legales.</p>' +
+             '<h2>9. Cambios</h2><p>Si esta política cambia de forma relevante, avisamos en la app y pedimos una nueva aceptación cuando sea necesario.</p>'
+        },
+        regras: {
+          h: 'Normas de la Comunidad',
+          c: '<p>Scype existe para ayudarte a cumplir lo que te propones, con personas que te animan. Estas normas protegen ese espacio.</p>' +
+             '<h2>Prohibido</h2><ol><li><strong>Peligro para la salud o la seguridad:</strong> ayuno extremo, privación de sueño, autolesión, retos de asfixia, drogas, armas, apuestas, conducción peligrosa.</li><li><strong>Acoso y odio:</strong> insultos, amenazas, humillación, discriminación, persecución.</li><li><strong>Desnudos, contenido sexual</strong> y violencia explícita.</li><li><strong>Menores en riesgo:</strong> cualquier contenido que los exponga o explote.</li><li><strong>Pruebas falsas</strong> o copiadas, y votar contra pruebas verdaderas por rivalidad.</li><li><strong>Spam,</strong> publicidad, estafas, cuentas falsas o automatizadas.</li><li><strong>Contenido de otras personas sin autorización,</strong> incluidos derechos de autor.</li><li><strong>Datos personales de terceros.</strong></li></ol>' +
+             '<h2>Buenas prácticas</h2><ul><li>Si un desafío te hace daño, para: tu salud es lo primero.</li><li>Nunca presiones a nadie para enviar fotos o vídeos personales.</li><li>Puedes mostrar el resultado sin mostrar la cara.</li><li>Anima en lugar de criticar.</li></ul>' +
+             '<h2>Si se incumplen las normas</h2><p>Eliminación del contenido, aviso, limitación de funciones, suspensión o cierre de la cuenta, según la gravedad. Las situaciones de peligro real o delito pueden comunicarse a las autoridades.</p>'
+        },
+        moderacao: {
+          h: 'Denuncias y Moderación',
+          c: '<h2>Cómo denunciar</h2><p>En cualquier prueba, comentario, mensaje, desafío o perfil: bandera o menú ⋯ → <strong>Denunciar</strong>. La denuncia es anónima para la persona denunciada. Quien no tiene cuenta puede pedir la retirada por derechos de autor en <a href="mailto:{email}">{email}</a>, identificando la obra y el contenido.</p>' +
+             '<h2>Qué ocurre después</h2><ol><li>Dejas de ver el contenido denunciado de inmediato.</li><li>Si <strong>3 personas distintas</strong> denuncian el mismo contenido, queda oculto para todos hasta su revisión.</li><li>Un moderador revisa la denuncia. El peligro para la vida o para menores tiene máxima prioridad.</li><li>Decisiones posibles: mantener, eliminar, ocultar, avisar, suspender o cerrar la cuenta.</li></ol>' +
+             '<h2>Reclamar</h2><p>Si no estás de acuerdo con una decisión, escribe a <a href="mailto:{email}">{email}</a> con el motivo. Siempre que sea posible, otra persona revisa la reclamación.</p>'
+        },
+        desafios: {
+          h: 'Desafíos, pruebas y rankings',
+          c: '<h2>Participación</h2><ul><li>Participar es voluntario. Puedes salir de un desafío cuando quieras.</li><li>Los desafíos privados solo los ve quien fue invitado o tiene el código. Los públicos los ve quien tiene cuenta.</li><li>Los desafíos públicos que incentiven riesgos se bloquean u ocultan.</li></ul>' +
+             '<h2>Pruebas</h2><ul><li>Una prueba es una foto, un vídeo o una descripción de tu progreso. No necesitas mostrar la cara, el cuerpo o la casa.</li><li>Los participantes del desafío las ven y las evalúan.</li><li>Las pruebas falsas o de otras personas incumplen las normas.</li></ul>' +
+             '<h2>XP, racha y ranking</h2><ul><li>El XP se calcula en el servidor a partir de las pruebas aprobadas y los bonos.</li><li>Un día sin prueba en un desafío activo cuesta 15 XP en ese desafío.</li><li>La racha cuenta los días con prueba. Hay días de protección semanales para que un mal día no lo borre todo.</li><li>El ranking muestra el nombre, la foto y el XP de quienes están en el desafío, solo a quienes están en él.</li></ul>' +
+             '<h2>Salud</h2><p>Scype no es consejo médico. Antes de desafíos de ejercicio, alimentación o sueño, habla con un profesional si tienes dudas. Si un desafío te hace daño, para.</p>'
+        },
+        'eliminar-conta': {
+          h: 'Eliminar la cuenta y los datos',
+          c: '<h2>En la app</h2><p><strong>Perfil → Cuenta y seguridad → Eliminar cuenta</strong> y confirmar. No se puede deshacer. Se borran de inmediato:</p><ul><li>el perfil, la foto y el sueño;</li><li>los desafíos que creaste, tus participaciones, pruebas y archivos;</li><li>evaluaciones, comentarios, reacciones, apoyos, mensajes y adjuntos;</li><li>insignias, racha, Alter Ego, invitaciones y preferencias;</li><li>la cuenta de acceso (correo y contraseña).</li></ul>' +
+             '<h2>Sin la app</h2><p>Envía un correo a <a href="mailto:{email}?subject=Eliminar%20cuenta%20Scype">{email}</a> desde la dirección de la cuenta, con el asunto "Eliminar cuenta Scype". Confirmamos la identidad y eliminamos la cuenta.</p>' +
+             '<h2>Qué puede quedar</h2><ul><li>Copias de seguridad automáticas, hasta que se sustituyan.</li><li>Registros de fallos, sin vínculo contigo, durante un máximo de 90 días.</li><li>Registros de denuncias y decisiones de moderación, cuando lo exija la ley o para defender derechos.</li></ul>'
         }
+      }
+    }
+  };
 
-        function checkHash() {
-            let hash = window.location.hash.substring(1);
-            if (hash.includes('?')) {
-                hash = hash.split('?')[0];
-            }
-            const panelId = hashMap[hash];
-            if (panelId) {
-                activatePanel(panelId);
-            } else {
-                activatePanel('privacy');
-            }
-        }
+  // As línguas da app sem tradução destes documentos abrem em inglês, com aviso
+  var AVISO_INGLES = {
+    fr: 'Ces documents ne sont pas encore disponibles en français. Voici la version anglaise.',
+    de: 'Diese Dokumente sind noch nicht auf Deutsch verfügbar. Hier ist die englische Fassung.',
+    it: 'Questi documenti non sono ancora disponibili in italiano. Ecco la versione inglese.',
+    zh: '这些文件暂无中文版本。以下为英文版本。'
+  };
 
-        tabs.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const tabName = btn.getAttribute('data-tab');
-                let hash = '';
-                if (tabName === 'privacy') {
-                    activatePanel('privacy');
-                    hash = 'privacidade';
-                } else if (tabName === 'terms') {
-                    activatePanel('terms');
-                    hash = 'termos';
-                } else if (tabName === 'restore') {
-                    activatePanel('restore');
-                    hash = 'restauracao';
-                }
-                window.location.hash = hash;
-            });
-        });
+  function preencher(t) {
+    return t
+      .replace(/\{email\}/g, CONFIG.email)
+      .replace(/\{entidade\}/g, CONFIG.entidade)
+      .replace(/\{versao\}/g, CONFIG.versao)
+      .replace(/\{idade\}/g, String(CONFIG.idadeMinima));
+  }
 
-        checkHash();
-        window.addEventListener('hashchange', checkHash);
+  function linguaPedida() {
+    var pedida = new URLSearchParams(location.search).get('lang') || (navigator.language || 'pt');
+    return pedida.toLowerCase().split('-')[0];
+  }
 
-        // ========== RESTAURAÇÃO DE COMPRA ==========
-        const restoreBtn = document.getElementById('restoreBtn');
-        if (restoreBtn) {
-            restoreBtn.addEventListener('click', function() {
-                const originalHtml = restoreBtn.innerHTML;
-                const t = translations[currentLang];
-                restoreBtn.disabled = true;
-                restoreBtn.innerHTML = t.checking;
-                
-                setTimeout(() => {
-                    const card = document.querySelector('.restore-card');
-                    let msg = card.querySelector('.restore-feedback');
-                    if (!msg) {
-                        msg = document.createElement('div');
-                        msg.className = 'restore-feedback';
-                        msg.style.marginTop = '14px';
-                        msg.style.fontSize = '0.8rem';
-                        msg.style.padding = '10px';
-                        msg.style.borderRadius = '14px';
-                        msg.style.backgroundColor = '#f0f0f0';
-                        msg.style.color = '#000';
-                        msg.style.textAlign = 'center';
-                        card.appendChild(msg);
-                    }
-                    msg.innerHTML = t.success;
-                    restoreBtn.disabled = false;
-                    restoreBtn.innerHTML = originalHtml;
-                    
-                    setTimeout(() => {
-                        if (msg) msg.remove();
-                    }, 5000);
-                }, 1300);
-            });
-        }
-    })();
+  var pedida = linguaPedida();
+  var conhecida = TEXTOS[pedida] || AVISO_INGLES[pedida];
+  var lingua = TEXTOS[pedida] ? pedida : conhecida ? 'en' : 'pt';
+
+  function seccaoAtual() {
+    // O hash pode trazer "?lang=": a app antiga punha-o depois do #
+    var hash = decodeURIComponent(location.hash.slice(1)).split('?')[0];
+    if (ANTIGOS[hash]) return ANTIGOS[hash];
+    return ORDEM.indexOf(hash) >= 0 ? hash : 'ajuda';
+  }
+
+  function desenhar() {
+    var t = TEXTOS[lingua];
+    var atual = seccaoAtual();
+    var doc = t.docs[atual];
+    document.documentElement.lang = lingua;
+    document.title = doc.h + ' - Scype';
+    document.getElementById('idioma').value = lingua;
+    document.getElementById('abas').innerHTML = ORDEM.map(function (id) {
+      return '<a href="#' + id + '"' + (id === atual ? ' aria-current="page"' : '') + '>' + t.abas[id] + '</a>';
+    }).join('');
+    var aviso = AVISO_INGLES[pedida] ? '<p class="aviso" lang="' + pedida + '">' + AVISO_INGLES[pedida] + '</p>' : '';
+    var versao = atual === 'ajuda' ? '' : '<p class="versao">' + preencher(t.versao) + '</p>';
+    document.getElementById('conteudo').innerHTML = aviso + '<h1>' + doc.h + '</h1>' + versao + preencher(doc.c);
+    document.getElementById('rodape').textContent = preencher(t.rodape);
+    var ativa = document.querySelector('nav a[aria-current="page"]');
+    if (ativa && ativa.scrollIntoView) ativa.scrollIntoView({ block: 'nearest', inline: 'center' });
+  }
+
+  document.getElementById('idioma').addEventListener('change', function (e) {
+    lingua = e.target.value;
+    pedida = lingua;
+    var url = new URL(location.href);
+    url.searchParams.set('lang', lingua);
+    history.replaceState(null, '', url);
+    desenhar();
+  });
+  window.addEventListener('hashchange', function () {
+    desenhar();
+    window.scrollTo(0, 0);
+  });
+  desenhar();
+})();
 </script>
 </body>
 </html>
