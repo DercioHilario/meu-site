@@ -132,6 +132,12 @@
     font-size: 13.5px;
     padding: 20px 16px 36px;
   }
+  .campo {
+    display: block; width: 100%; box-sizing: border-box; min-height: 52px; margin-top: 10px;
+    border-radius: 16px; border: 1px solid var(--borda); background: var(--superficie2);
+    color: var(--texto); font: inherit; font-size: 16px; padding: 0 16px;
+  }
+  .rec-msg { min-height: 20px; margin: 10px 0 0; color: var(--texto2); font-size: 14.5px; }
   :focus-visible { outline: 2px solid var(--azul-claro); outline-offset: 2px; }
 </style>
 </head>
@@ -184,7 +190,7 @@
         termos: {
           h: 'Termos de Utilização',
           c: '<h2>1. Quem somos</h2><p>O Scype é prestado por {entidade}. Contacto: <a href="mailto:{email}">{email}</a>.</p>' +
-             '<h2>2. O que é o Scype</h2><p>Uma rede social de desafios pessoais: crias ou entras em desafios de 7 a 60 dias, envias provas do teu progresso, avalias as provas de quem está contigo, ganhas XP e apareces no ranking do desafio. O Scype é uma ferramenta de motivação: <strong>não garante resultados</strong> e não substitui aconselhamento médico, psicológico, financeiro ou de outro profissional.</p>' +
+             '<h2>2. O que é o Scype</h2><p>Uma rede social de desafios pessoais: crias ou entras em desafios de 7 a 90 dias, envias provas do teu progresso, avalias as provas de quem está contigo, ganhas XP e apareces no ranking do desafio. O Scype é uma ferramenta de motivação: <strong>não garante resultados</strong> e não substitui aconselhamento médico, psicológico, financeiro ou de outro profissional.</p>' +
              '<h2>3. Conta</h2><ul><li>Tens de ter <strong>{idade} anos ou mais</strong> e confirmá-lo no registo.</li><li>Os dados que dás têm de ser verdadeiros. A conta é pessoal e intransmissível.</li><li>És responsável pela tua palavra-passe (mínimo de 8 caracteres) e pelo que acontece na tua conta.</li><li>Podes apagar a conta a qualquer momento (ver <a href="#eliminar-conta">Apagar conta</a>).</li></ul>' +
              '<h2>4. Regras de utilização</h2><p>Tens de cumprir as <a href="#regras">Regras da Comunidade</a>. Desafios públicos que incentivem riscos para a saúde ou a segurança são bloqueados.</p>' +
              '<h2>5. O teu conteúdo</h2><ul><li>O que publicas continua a ser teu.</li><li>Para o serviço funcionar, dás ao Scype uma licença não exclusiva, gratuita e limitada ao funcionamento da plataforma para guardar, mostrar a quem tem acesso, traduzir automaticamente e gerar as imagens de partilha que pedires. Termina quando apagas o conteúdo ou a conta, salvo cópias que a lei obrigue a guardar.</li><li>Só publicas o que tens direito a publicar. Se aparecerem outras pessoas, precisas da autorização delas.</li><li>As provas são vistas pelos participantes do desafio. Na Comunidade só aparecem se ativares "Partilhar na Comunidade" e forem aprovadas. <strong>Nunca és obrigado a mostrar a tua cara, o teu corpo ou a tua casa.</strong></li></ul>' +
@@ -216,7 +222,7 @@
              '<tr><td>Nome, e-mail e foto da conta Google, só se entrares com o Google</td><td>Criar a conta sem palavra-passe</td><td>Conforme as linhas acima</td></tr>' +
              '</tbody></table></div><p><strong>Não usamos os teus dados para publicidade nem os vendemos.</strong></p>' +
              '<h2>3. O que os outros veem</h2><p>Quem tem conta pode ver o teu nome de utilizador, foto, nível, recorde de sequência, número de selos, apoiantes (conforme as tuas definições) e as provas que escolheste partilhar. <strong>O e-mail nunca é mostrado.</strong></p>' +
-             '<h2>4. Fornecedores</h2><ul><li><strong>Supabase:</strong> base de dados, autenticação, ficheiros e funções do servidor.</li><li><strong>Google Firebase:</strong> notificações.</li><li><strong>Google e MyMemory:</strong> tradução automática dos textos que pedes para traduzir ou que são mostrados noutra língua.</li><li><strong>Google:</strong> entrar com a conta Google, se o escolheres.</li></ul><p>Estes serviços podem tratar dados fora do teu país, com as garantias que a lei exige.</p>' +
+             '<h2>4. Fornecedores</h2><ul><li><strong>Supabase:</strong> base de dados, autenticação, ficheiros e funções do servidor.</li><li><strong>Google Firebase:</strong> notificações.</li><li><strong>Tradução automática:</strong> é feita no teu próprio telemóvel (Google ML Kit). O texto não é enviado para nenhum servidor; o telemóvel só descarrega o pacote da língua.</li><li><strong>Google:</strong> entrar com a conta Google, se o escolheres.</li></ul><p>Estes serviços podem tratar dados fora do teu país, com as garantias que a lei exige.</p>' +
              '<h2>5. Quanto tempo guardamos</h2><ul><li>Conta e conteúdos: enquanto a conta existir.</li><li>Ao apagares a conta, os dados e ficheiros são apagados de imediato. As cópias de segurança são substituídas periodicamente.</li><li>Registos de falhas e estatísticas: 90 dias. Ao apagares a conta, as estatísticas são apagadas e os registos de falhas deixam de estar ligados a ti.</li><li>Denúncias e decisões de moderação: o tempo necessário para defesa de direitos e cumprimento legal.</li></ul>' +
              '<h2>6. Os teus direitos</h2><p>Podes pedir acesso, retificação, apagamento, limitação e portabilidade, e opor-te a tratamentos baseados em interesse legítimo. Muitos fazem-se na própria app. Para os restantes, escreve para <a href="mailto:{email}">{email}</a>. Podes também reclamar à autoridade de proteção de dados (no Brasil, a ANPD; em Portugal, a CNPD).</p>' +
              '<h2>7. Idade mínima</h2><p>O Scype é para pessoas com <strong>{idade} anos ou mais</strong>. Se soubermos que uma conta pertence a alguém mais novo, apagamo-la.</p>' +
@@ -240,7 +246,7 @@
           h: 'Desafios, provas e rankings',
           c: '<h2>Participação</h2><ul><li>Participar é voluntário. Podes sair de um desafio quando quiseres.</li><li>Desafios privados só são vistos por quem foi convidado ou tem o código. Desafios públicos são vistos por quem tem conta.</li><li>Desafios públicos que incentivem riscos são bloqueados ou ocultados.</li></ul>' +
              '<h2>Provas</h2><ul><li>Uma prova é uma foto, vídeo ou descrição do teu progresso. Não precisas de mostrar a cara, o corpo ou a casa.</li><li>Os participantes do desafio veem-nas e avaliam-nas.</li><li>Provas falsas ou de outras pessoas violam as regras.</li></ul>' +
-             '<h2>XP, sequência e ranking</h2><ul><li>O XP é calculado no servidor a partir das provas aprovadas e dos bónus.</li><li>Um dia sem prova num desafio ativo custa 15 XP nesse desafio.</li><li>A sequência conta os dias com prova. Há dias de proteção semanais para um dia mau não apagar tudo.</li><li>O ranking mostra o nome, a foto e o XP de quem está no desafio, apenas a quem está no desafio.</li></ul>' +
+             '<h2>XP, sequência e ranking</h2><ul><li>O XP é calculado no servidor a partir das provas aprovadas e dos bónus.</li><li>Um dia sem prova num desafio ativo custa 15 XP nesse desafio.</li><li>A sequência conta os dias com prova. Há dias de proteção semanais para um dia mau não apagar tudo.</li><li>O ranking mostra o nome, a foto e o XP de quem está no desafio, apenas a quem está no desafio.</li></ul><h2>Missão final</h2><p>Cada desafio termina com uma missão final, aberta durante 48 horas depois do fim. Só abre a quem tiver prova em pelo menos 70% dos dias. Até lá, só quem criou o desafio a vê.</p>' +
              '<h2>Saúde</h2><p>O Scype não é aconselhamento médico. Antes de desafios de exercício, alimentação ou sono, fala com um profissional se tiveres dúvidas. Se um desafio te faz mal, para.</p>'
         },
         'eliminar-conta': {
@@ -268,7 +274,7 @@
         termos: {
           h: 'Terms of Use',
           c: '<h2>1. Who we are</h2><p>Scype is provided by {entidade}. Contact: <a href="mailto:{email}">{email}</a>.</p>' +
-             '<h2>2. What Scype is</h2><p>A social network of personal challenges: you create or join challenges of 7 to 60 days, send proof of your progress, review the proof of the people with you, earn XP and appear in the challenge ranking. Scype is a motivation tool: it <strong>does not guarantee results</strong> and does not replace medical, psychological, financial or other professional advice.</p>' +
+             '<h2>2. What Scype is</h2><p>A social network of personal challenges: you create or join challenges of 7 to 90 days, send proof of your progress, review the proof of the people with you, earn XP and appear in the challenge ranking. Scype is a motivation tool: it <strong>does not guarantee results</strong> and does not replace medical, psychological, financial or other professional advice.</p>' +
              '<h2>3. Account</h2><ul><li>You must be <strong>{idade} or older</strong> and confirm this when signing up.</li><li>The information you give must be true. Your account is personal and non-transferable.</li><li>You are responsible for your password (at least 8 characters) and for what happens in your account.</li><li>You can delete your account at any time (see <a href="#eliminar-conta">Delete account</a>).</li></ul>' +
              '<h2>4. Rules of use</h2><p>You must follow the <a href="#regras">Community Rules</a>. Public challenges that encourage health or safety risks are blocked.</p>' +
              '<h2>5. Your content</h2><ul><li>What you publish remains yours.</li><li>For the service to work, you give Scype a non-exclusive, free licence, limited to running the platform, to store it, show it to those with access, translate it automatically and generate the share images you request. It ends when you delete the content or the account, except for copies the law requires us to keep.</li><li>Only publish what you have the right to publish. If other people appear, you need their permission.</li><li>Proof is seen by the challenge participants. It only appears in the Community if you turn on "Share to Community" and it is approved. <strong>You are never required to show your face, body or home.</strong></li></ul>' +
@@ -300,7 +306,7 @@
              '<tr><td>Name, email and photo from your Google account, only if you sign in with Google</td><td>Create the account without a password</td><td>As in the rows above</td></tr>' +
              '</tbody></table></div><p><strong>We do not use your data for advertising and we do not sell it.</strong></p>' +
              '<h2>3. What others see</h2><p>People with an account can see your username, photo, level, streak record, number of badges, supports (per your settings) and the proof you chose to share. <strong>Your email is never shown.</strong></p>' +
-             '<h2>4. Providers</h2><ul><li><strong>Supabase:</strong> database, authentication, files and server functions.</li><li><strong>Google Firebase:</strong> notifications.</li><li><strong>Google and MyMemory:</strong> automatic translation of text you ask to translate or that is shown in another language.</li><li><strong>Google:</strong> sign-in with a Google account, if you choose it.</li></ul><p>These services may process data outside your country, with the safeguards the law requires.</p>' +
+             '<h2>4. Providers</h2><ul><li><strong>Supabase:</strong> database, authentication, files and server functions.</li><li><strong>Google Firebase:</strong> notifications.</li><li><strong>Automatic translation:</strong> done on your own phone (Google ML Kit). The text is not sent to any server; the phone only downloads the language pack.</li><li><strong>Google:</strong> sign-in with a Google account, if you choose it.</li></ul><p>These services may process data outside your country, with the safeguards the law requires.</p>' +
              '<h2>5. How long we keep data</h2><ul><li>Account and content: while the account exists.</li><li>When you delete your account, data and files are deleted immediately. Backups are replaced periodically.</li><li>Crash logs and statistics: 90 days. When you delete your account, statistics are deleted and crash logs are no longer linked to you.</li><li>Reports and moderation decisions: as long as needed to defend rights and comply with the law.</li></ul>' +
              '<h2>6. Your rights</h2><p>You can request access, correction, deletion, restriction and portability, and object to processing based on legitimate interest. Many of these can be done in the app. For the rest, write to <a href="mailto:{email}">{email}</a>. You can also complain to the data protection authority where you live.</p>' +
              '<h2>7. Minimum age</h2><p>Scype is for people aged <strong>{idade} or older</strong>. If we learn that an account belongs to someone younger, we delete it.</p>' +
@@ -324,7 +330,7 @@
           h: 'Challenges, proof and rankings',
           c: '<h2>Taking part</h2><ul><li>Taking part is voluntary. You can leave a challenge whenever you want.</li><li>Private challenges are only seen by those invited or with the code. Public challenges are seen by people with an account.</li><li>Public challenges that encourage risks are blocked or hidden.</li></ul>' +
              '<h2>Proof</h2><ul><li>Proof is a photo, video or description of your progress. You do not need to show your face, body or home.</li><li>Challenge participants see and review it.</li><li>False proof or proof from other people breaks the rules.</li></ul>' +
-             '<h2>XP, streak and ranking</h2><ul><li>XP is calculated on the server from approved proof and bonuses.</li><li>A day without proof in an active challenge costs 15 XP in that challenge.</li><li>The streak counts days with proof. Weekly protection days stop one bad day from erasing everything.</li><li>The ranking shows the name, photo and XP of those in the challenge, only to those in the challenge.</li></ul>' +
+             '<h2>XP, streak and ranking</h2><ul><li>XP is calculated on the server from approved proof and bonuses.</li><li>A day without proof in an active challenge costs 15 XP in that challenge.</li><li>The streak counts days with proof. Weekly protection days stop one bad day from erasing everything.</li><li>The ranking shows the name, photo and XP of those in the challenge, only to those in the challenge.</li></ul><h2>Final mission</h2><p>Each challenge ends with a final mission, open for 48 hours after the end. It only opens if you have proof on at least 70% of the days. Until then, only the challenge creator can see it.</p>' +
              '<h2>Health</h2><p>Scype is not medical advice. Before exercise, food or sleep challenges, talk to a professional if in doubt. If a challenge harms you, stop.</p>'
         },
         'eliminar-conta': {
@@ -352,7 +358,7 @@
         termos: {
           h: 'Términos de Uso',
           c: '<h2>1. Quiénes somos</h2><p>Scype es prestado por {entidade}. Contacto: <a href="mailto:{email}">{email}</a>.</p>' +
-             '<h2>2. Qué es Scype</h2><p>Una red social de desafíos personales: creas o entras en desafíos de 7 a 60 días, envías pruebas de tu progreso, evalúas las pruebas de quienes están contigo, ganas XP y apareces en el ranking del desafío. Scype es una herramienta de motivación: <strong>no garantiza resultados</strong> y no sustituye el consejo médico, psicológico, financiero o de otro profesional.</p>' +
+             '<h2>2. Qué es Scype</h2><p>Una red social de desafíos personales: creas o entras en desafíos de 7 a 90 días, envías pruebas de tu progreso, evalúas las pruebas de quienes están contigo, ganas XP y apareces en el ranking del desafío. Scype es una herramienta de motivación: <strong>no garantiza resultados</strong> y no sustituye el consejo médico, psicológico, financiero o de otro profesional.</p>' +
              '<h2>3. Cuenta</h2><ul><li>Debes tener <strong>{idade} años o más</strong> y confirmarlo al registrarte.</li><li>Los datos que das deben ser verdaderos. La cuenta es personal e intransferible.</li><li>Eres responsable de tu contraseña (mínimo 8 caracteres) y de lo que ocurra en tu cuenta.</li><li>Puedes eliminar la cuenta en cualquier momento (ver <a href="#eliminar-conta">Eliminar cuenta</a>).</li></ul>' +
              '<h2>4. Normas de uso</h2><p>Debes cumplir las <a href="#regras">Normas de la Comunidad</a>. Los desafíos públicos que incentiven riesgos para la salud o la seguridad se bloquean.</p>' +
              '<h2>5. Tu contenido</h2><ul><li>Lo que publicas sigue siendo tuyo.</li><li>Para que el servicio funcione, das a Scype una licencia no exclusiva, gratuita y limitada al funcionamiento de la plataforma para guardarlo, mostrarlo a quien tiene acceso, traducirlo automáticamente y generar las imágenes para compartir que pidas. Termina cuando eliminas el contenido o la cuenta, salvo copias que la ley obligue a conservar.</li><li>Publica solo lo que tienes derecho a publicar. Si aparecen otras personas, necesitas su autorización.</li><li>Las pruebas las ven los participantes del desafío. En la Comunidad solo aparecen si activas "Compartir en la Comunidad" y son aprobadas. <strong>Nunca estás obligado a mostrar tu cara, tu cuerpo o tu casa.</strong></li></ul>' +
@@ -384,7 +390,7 @@
              '<tr><td>Nombre, correo y foto de la cuenta de Google, solo si entras con Google</td><td>Crear la cuenta sin contraseña</td><td>Según las filas anteriores</td></tr>' +
              '</tbody></table></div><p><strong>No usamos tus datos para publicidad ni los vendemos.</strong></p>' +
              '<h2>3. Qué ven los demás</h2><p>Quien tiene cuenta puede ver tu nombre de usuario, foto, nivel, récord de racha, número de insignias, apoyos (según tus ajustes) y las pruebas que elegiste compartir. <strong>El correo nunca se muestra.</strong></p>' +
-             '<h2>4. Proveedores</h2><ul><li><strong>Supabase:</strong> base de datos, autenticación, archivos y funciones del servidor.</li><li><strong>Google Firebase:</strong> notificaciones.</li><li><strong>Google y MyMemory:</strong> traducción automática de los textos que pides traducir o que se muestran en otro idioma.</li><li><strong>Google:</strong> entrar con la cuenta de Google, si lo eliges.</li></ul><p>Estos servicios pueden tratar datos fuera de tu país, con las garantías que exige la ley.</p>' +
+             '<h2>4. Proveedores</h2><ul><li><strong>Supabase:</strong> base de datos, autenticación, archivos y funciones del servidor.</li><li><strong>Google Firebase:</strong> notificaciones.</li><li><strong>Traducción automática:</strong> se hace en tu propio teléfono (Google ML Kit). El texto no se envía a ningún servidor; el teléfono solo descarga el paquete del idioma.</li><li><strong>Google:</strong> entrar con la cuenta de Google, si lo eliges.</li></ul><p>Estos servicios pueden tratar datos fuera de tu país, con las garantías que exige la ley.</p>' +
              '<h2>5. Cuánto tiempo guardamos</h2><ul><li>Cuenta y contenidos: mientras exista la cuenta.</li><li>Al eliminar la cuenta, los datos y archivos se borran de inmediato. Las copias de seguridad se sustituyen periódicamente.</li><li>Registros de fallos y estadísticas: 90 días. Al eliminar la cuenta, las estadísticas se borran y los registros de fallos dejan de estar vinculados a ti.</li><li>Denuncias y decisiones de moderación: el tiempo necesario para defender derechos y cumplir la ley.</li></ul>' +
              '<h2>6. Tus derechos</h2><p>Puedes pedir acceso, rectificación, supresión, limitación y portabilidad, y oponerte a tratamientos basados en interés legítimo. Muchos se hacen en la propia app. Para los demás, escribe a <a href="mailto:{email}">{email}</a>. También puedes reclamar ante la autoridad de protección de datos de tu país.</p>' +
              '<h2>7. Edad mínima</h2><p>Scype es para personas de <strong>{idade} años o más</strong>. Si sabemos que una cuenta pertenece a alguien menor, la eliminamos.</p>' +
@@ -408,7 +414,7 @@
           h: 'Desafíos, pruebas y rankings',
           c: '<h2>Participación</h2><ul><li>Participar es voluntario. Puedes salir de un desafío cuando quieras.</li><li>Los desafíos privados solo los ve quien fue invitado o tiene el código. Los públicos los ve quien tiene cuenta.</li><li>Los desafíos públicos que incentiven riesgos se bloquean u ocultan.</li></ul>' +
              '<h2>Pruebas</h2><ul><li>Una prueba es una foto, un vídeo o una descripción de tu progreso. No necesitas mostrar la cara, el cuerpo o la casa.</li><li>Los participantes del desafío las ven y las evalúan.</li><li>Las pruebas falsas o de otras personas incumplen las normas.</li></ul>' +
-             '<h2>XP, racha y ranking</h2><ul><li>El XP se calcula en el servidor a partir de las pruebas aprobadas y los bonos.</li><li>Un día sin prueba en un desafío activo cuesta 15 XP en ese desafío.</li><li>La racha cuenta los días con prueba. Hay días de protección semanales para que un mal día no lo borre todo.</li><li>El ranking muestra el nombre, la foto y el XP de quienes están en el desafío, solo a quienes están en él.</li></ul>' +
+             '<h2>XP, racha y ranking</h2><ul><li>El XP se calcula en el servidor a partir de las pruebas aprobadas y los bonos.</li><li>Un día sin prueba en un desafío activo cuesta 15 XP en ese desafío.</li><li>La racha cuenta los días con prueba. Hay días de protección semanales para que un mal día no lo borre todo.</li><li>El ranking muestra el nombre, la foto y el XP de quienes están en el desafío, solo a quienes están en él.</li></ul><h2>Misión final</h2><p>Cada desafío termina con una misión final, abierta durante 48 horas después del final. Solo se abre si tienes prueba en al menos el 70% de los días. Hasta entonces, solo quien creó el desafío la ve.</p>' +
              '<h2>Salud</h2><p>Scype no es consejo médico. Antes de desafíos de ejercicio, alimentación o sueño, habla con un profesional si tienes dudas. Si un desafío te hace daño, para.</p>'
         },
         'eliminar-conta': {
@@ -453,7 +459,85 @@
     return ORDEM.indexOf(hash) >= 0 ? hash : 'ajuda';
   }
 
+
+  // ===== Recuperar a palavra-passe =====
+  // O link do email traz a sessão depois do # (access_token, refresh_token,
+  // type=recovery). Abre aqui quando a app não abriu (computador, Expo Go,
+  // link aberto noutro sítio): a pessoa escolhe a nova senha nesta página.
+  var SUPABASE_URL = 'https://zogrynyirjimxlfzhccv.supabase.co';
+  var SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpvZ3J5bnlpcmppbXhsZnpoY2N2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwODE3MTEsImV4cCI6MjA5MDY1NzcxMX0.Yh0RJRjcGLxTeLhir_W993yZXTzxhtKXrVME2eZr3Mc';
+  var REC = {
+    pt: { h: 'Nova palavra-passe', p: 'Escolhe a tua nova palavra-passe. Tem de ter pelo menos 8 caracteres.', nova: 'Nova palavra-passe', rep: 'Repete a palavra-passe', guardar: 'Guardar', aGuardar: 'A guardar...', curta: 'Tem de ter pelo menos 8 caracteres.', diferentes: 'As palavras-passe não são iguais.', ok: 'Pronto! A tua palavra-passe foi mudada. Já podes entrar no Scype com ela.', erro: 'Não foi possível mudar a palavra-passe. Pede um link novo na app.', expirou: 'Este link já não é válido (expirou ou já foi usado). Abre o Scype, toca em "Esqueci-me da palavra-passe" e pede outro.', app: 'Abrir no Scype' },
+    en: { h: 'New password', p: 'Choose your new password. It must have at least 8 characters.', nova: 'New password', rep: 'Repeat the password', guardar: 'Save', aGuardar: 'Saving...', curta: 'It must have at least 8 characters.', diferentes: "The passwords don't match.", ok: 'Done! Your password was changed. You can now sign in to Scype with it.', erro: "We couldn't change the password. Ask for a new link in the app.", expirou: 'This link is no longer valid (it expired or was already used). Open Scype, tap "Forgot password" and ask for another one.', app: 'Open in Scype' },
+    es: { h: 'Nueva contraseña', p: 'Elige tu nueva contraseña. Debe tener al menos 8 caracteres.', nova: 'Nueva contraseña', rep: 'Repite la contraseña', guardar: 'Guardar', aGuardar: 'Guardando...', curta: 'Debe tener al menos 8 caracteres.', diferentes: 'Las contraseñas no coinciden.', ok: '¡Listo! Tu contraseña se cambió. Ya puedes entrar en Scype con ella.', erro: 'No se pudo cambiar la contraseña. Pide un enlace nuevo en la app.', expirou: 'Este enlace ya no es válido (caducó o ya se usó). Abre Scype, toca en "Olvidé mi contraseña" y pide otro.', app: 'Abrir en Scype' }
+  };
+
+  function lerRecuperacao() {
+    var bruto = location.hash.slice(1);
+    if (bruto.indexOf('access_token=') < 0 && bruto.indexOf('error') < 0) return null;
+    var p = new URLSearchParams(bruto);
+    if (p.get('access_token') && p.get('type') === 'recovery') return { token: p.get('access_token'), bruto: bruto };
+    if (p.get('error_code') || p.get('error_description')) return { erro: true };
+    return null;
+  }
+  var recuperacao = lerRecuperacao();
+
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  function desenharRecuperacao() {
+    var r = REC[lingua] || REC.pt;
+    document.documentElement.lang = lingua;
+    document.title = r.h + ' - Scype';
+    document.getElementById('idioma').value = lingua;
+    document.getElementById('abas').innerHTML = '';
+    document.getElementById('rodape').textContent = preencher(TEXTOS[lingua].rodape);
+    var c = document.getElementById('conteudo');
+    if (recuperacao.erro) {
+      c.innerHTML = '<h1>' + esc(r.h) + '</h1><div class="cartao"><p>' + esc(r.expirou) + '</p></div>';
+      return;
+    }
+    var telemovel = /Android|iPhone|iPad/i.test(navigator.userAgent);
+    c.innerHTML =
+      '<h1>' + esc(r.h) + '</h1>' +
+      '<div class="cartao"><p>' + esc(r.p) + '</p>' +
+      '<form id="rec-form" novalidate>' +
+      '<input id="rec-nova" type="password" autocomplete="new-password" minlength="8" placeholder="' + esc(r.nova) + '" aria-label="' + esc(r.nova) + '" class="campo">' +
+      '<input id="rec-rep" type="password" autocomplete="new-password" minlength="8" placeholder="' + esc(r.rep) + '" aria-label="' + esc(r.rep) + '" class="campo">' +
+      '<p id="rec-msg" role="status" class="rec-msg"></p>' +
+      '<button id="rec-btn" type="submit" class="botao" style="width:100%;border:0;cursor:pointer">' + esc(r.guardar) + '</button>' +
+      '</form></div>' +
+      (telemovel ? '<a class="botao" style="background:var(--superficie2)" href="scype://redefinir-senha#' + esc(recuperacao.bruto) + '">' + esc(r.app) + '</a>' : '');
+    document.getElementById('rec-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var nova = document.getElementById('rec-nova').value;
+      var rep = document.getElementById('rec-rep').value;
+      var msg = document.getElementById('rec-msg');
+      var btn = document.getElementById('rec-btn');
+      msg.style.color = '';
+      if (nova.length < 8) { msg.textContent = r.curta; return; }
+      if (nova !== rep) { msg.textContent = r.diferentes; return; }
+      btn.disabled = true;
+      btn.textContent = r.aGuardar;
+      fetch(SUPABASE_URL + '/auth/v1/user', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json', apikey: SUPABASE_ANON, Authorization: 'Bearer ' + recuperacao.token },
+        body: JSON.stringify({ password: nova })
+      }).then(function (res) {
+        if (!res.ok) throw new Error(String(res.status));
+        // A sessão do link não fica na página
+        history.replaceState(null, '', location.pathname + location.search);
+        c.innerHTML = '<h1>' + esc(r.h) + '</h1><div class="cartao"><p>' + esc(r.ok) + '</p></div>';
+      }).catch(function () {
+        msg.style.color = '#FF6B6B';
+        msg.textContent = r.erro;
+        btn.disabled = false;
+        btn.textContent = r.guardar;
+      });
+    });
+  }
+
   function desenhar() {
+    if (recuperacao) return desenharRecuperacao();
     var t = TEXTOS[lingua];
     var atual = seccaoAtual();
     var doc = t.docs[atual];
