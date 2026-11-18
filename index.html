@@ -7,10 +7,10 @@
 <meta name="theme-color" content="#000000">
 <meta name="description" content="Ajuda, Termos, Privacidade e Regras da Comunidade do Scype.">
 <title>Scype - Ajuda e documentos legais</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Wellfleet&display=swap" rel="stylesheet">
 <style>
+  .rodape-links a { margin: 0 2px; }
+  /* Fonte servida pelo próprio site: nenhum pedido a terceiros ao abrir a página */
+  @font-face { font-family: 'Wellfleet'; src: url('fontes/Wellfleet-Regular.ttf') format('truetype'); font-display: swap; }
   :root {
     --fundo: #000000;
     --superficie: #0E1520;
@@ -154,7 +154,7 @@
 </header>
 <div class="abas-fundo"><nav class="largura" id="abas"></nav></div>
 <main class="largura" id="conteudo">
-  <noscript><p>Scype: scype@gmail.com</p></noscript>
+  <noscript><p>Scype: scypeoficial@gmail.com</p></noscript>
 </main>
 <footer><div class="largura" id="rodape"></div></footer>
 
@@ -162,8 +162,12 @@
 (function () {
   // ===== Dados a confirmar: muda só aqui =====
   var CONFIG = {
-    email: 'scype@gmail.com',
-    entidade: 'SCYPE',
+    email: 'scypeoficial@gmail.com',
+    // Quem responde pelos dados (LGPD art. 41.º): nome e contacto
+    encarregado: 'Dercio Hilario Americo',
+    emailPrivacidade: 'derciooficail1@gmail.com',
+    // Responsável pelo tratamento: pessoa singular (sem empresa constituída)
+    entidade: 'Dercio Hilario Americo',
     versao: '2026-11',
     idadeMinima: 13
   };
@@ -176,6 +180,7 @@
     pt: {
       titulo: 'Scype - Ajuda e documentos legais',
       rodape: 'Scype · Documentos legais, versão {versao}',
+      contactoPrivacidade: 'Privacidade e dados pessoais: {encarregado} · <a href="mailto:{emailPrivacidade}">{emailPrivacidade}</a>',
       versao: 'Versão {versao} · Última atualização: novembro de 2026',
       abas: { ajuda: 'Ajuda', termos: 'Termos', privacidade: 'Privacidade', regras: 'Regras', moderacao: 'Moderação', desafios: 'Desafios', 'eliminar-conta': 'Apagar conta' },
       docs: {
@@ -198,11 +203,13 @@
              '<h2>7. Preço</h2><p>Hoje o Scype não faz nenhuma cobrança nem pede dados de pagamento. Quem cria conta recebe um presente de 7 dias grátis com tudo desbloqueado. Se passar a haver pagamento, o preço e as condições aparecem de forma clara antes de qualquer cobrança, e nada é cobrado sem a tua confirmação. Estes Termos são atualizados nessa altura.</p>' +
              '<h2>8. Responsabilidade</h2><p>O Scype é prestado "tal como está". Não respondemos por danos indiretos nem por decisões que tomes com base em desafios criados por outras pessoas, sem prejuízo dos direitos que a lei do consumidor te garante e que não podem ser afastados.</p>' +
              '<h2>9. Alterações</h2><p>Podemos alterar estes Termos. Avisamos com antecedência razoável e, se a alteração for relevante, pedimos nova aceitação. Podes deixar de usar o Scype e apagar a conta a qualquer momento.</p>' +
-             '<h2>10. Lei aplicável</h2><p>Aplica-se a lei do país da sede, sem prejuízo das normas imperativas do país onde vives.</p>'
+             '<h2>10. Lei aplicável</h2><p>Aplica-se a lei do país da sede, sem prejuízo das normas imperativas do país onde vives.</p>' +
+             '<h2>11. Direitos de autor e denúncias</h2><p>Se alguém publicou no Scype conteúdo teu sem autorização, ou conteúdo ilegal, denuncia-o na app (menu ⋯ → Denunciar) ou escreve para <a href="mailto:{email}">{email}</a> com o link ou a descrição do conteúdo, o motivo e, se for um direito de autor, prova de que és o titular. Respondemos e, se for o caso, removemos o conteúdo.</p>' +
+             '<h2>12. Conteúdo gerado automaticamente</h2><p>As mensagens do Alter Ego e as traduções são geradas automaticamente pela app e aparecem identificadas ("Traduzido · ver original"). Não são conselhos profissionais.</p>'
         },
         privacidade: {
           h: 'Política de Privacidade',
-          c: '<h2>1. Quem trata os teus dados</h2><p>O responsável é {entidade}. Contacto para privacidade: <a href="mailto:{email}">{email}</a>.</p>' +
+          c: '<h2>1. Quem trata os teus dados</h2><p>O responsável é {entidade}. Contacto para privacidade: <a href="mailto:{emailPrivacidade}">{emailPrivacidade}</a>.</p>' +
              '<h2>2. Que dados recolhemos e porquê</h2><div class="tabela"><table><thead><tr><th>Dados</th><th>Para quê</th><th>Quem vê</th></tr></thead><tbody>' +
              '<tr><td>E-mail e palavra-passe (guardada cifrada)</td><td>Criar e proteger a conta</td><td>Só tu e o Scype</td></tr>' +
              '<tr><td>Nome de utilizador e foto</td><td>Identificar-te na comunidade</td><td>Pessoas com conta</td></tr>' +
@@ -220,14 +227,27 @@
              '<tr><td>Contagem anónima de cada ecrã antes de criar conta (sem identificar a pessoa nem o telemóvel)</td><td>Perceber onde as pessoas desistem</td><td>Só o Scype</td></tr>' +
              '<tr><td>Alter Ego (nome, personalidade, foco, frase e o que preencheres). As respostas são geradas no teu telemóvel</td><td>Criar a tua versão ideal e as conversas com ela</td><td>Só tu</td></tr>' +
              '<tr><td>Nome, e-mail e foto da conta Google, só se entrares com o Google</td><td>Criar a conta sem palavra-passe</td><td>Conforme as linhas acima</td></tr>' +
+             '<tr><td>Género (homem, mulher, outro ou prefiro não dizer), <strong>opcional</strong></td><td>Escrever as notificações no género certo ("campeão"/"campeã")</td><td>Só tu e o Scype</td></tr>' +
+             '<tr><td>Registo dos aceites (o quê, versão, data e hora do servidor, versão da app)</td><td>Provar que aceitaste os Termos, a Privacidade e a idade mínima</td><td>Só tu e o Scype</td></tr>' +
              '</tbody></table></div><p><strong>Não usamos os teus dados para publicidade nem os vendemos.</strong></p>' +
              '<h2>3. O que os outros veem</h2><p>Quem tem conta pode ver o teu nome de utilizador, foto, nível, recorde de sequência, número de selos, apoiantes (conforme as tuas definições) e as provas que escolheste partilhar. <strong>O e-mail nunca é mostrado.</strong></p>' +
-             '<h2>4. Fornecedores</h2><ul><li><strong>Supabase:</strong> base de dados, autenticação, ficheiros e funções do servidor.</li><li><strong>Google Firebase:</strong> notificações.</li><li><strong>Tradução automática:</strong> é feita no teu próprio telemóvel (Google ML Kit). O texto não é enviado para nenhum servidor; o telemóvel só descarrega o pacote da língua.</li><li><strong>Google:</strong> entrar com a conta Google, se o escolheres.</li></ul><p>Estes serviços podem tratar dados fora do teu país, com as garantias que a lei exige.</p>' +
-             '<h2>5. Quanto tempo guardamos</h2><ul><li>Conta e conteúdos: enquanto a conta existir.</li><li>Ao apagares a conta, os dados e ficheiros são apagados de imediato. As cópias de segurança são substituídas periodicamente.</li><li>Registos de falhas e estatísticas: 90 dias. Ao apagares a conta, as estatísticas são apagadas e os registos de falhas deixam de estar ligados a ti.</li><li>Denúncias e decisões de moderação: o tempo necessário para defesa de direitos e cumprimento legal.</li></ul>' +
-             '<h2>6. Os teus direitos</h2><p>Podes pedir acesso, retificação, apagamento, limitação e portabilidade, e opor-te a tratamentos baseados em interesse legítimo. Muitos fazem-se na própria app. Para os restantes, escreve para <a href="mailto:{email}">{email}</a>. Podes também reclamar à autoridade de proteção de dados (no Brasil, a ANPD; em Portugal, a CNPD).</p>' +
-             '<h2>7. Idade mínima</h2><p>O Scype é para pessoas com <strong>{idade} anos ou mais</strong>. Se soubermos que uma conta pertence a alguém mais novo, apagamo-la.</p>' +
+             '<h2>4. Fornecedores (quem trata dados por nossa conta)</h2><div class="tabela"><table><thead><tr><th>Empresa</th><th>Para quê</th><th>Que dados</th></tr></thead><tbody>' +
+             '<tr><td>Supabase Inc.</td><td>Base de dados, contas, ficheiros e funções do servidor</td><td>Todos os dados da app</td></tr>' +
+             '<tr><td>Google (Firebase Cloud Messaging)</td><td>Entregar as notificações</td><td>Token do telemóvel e o texto da notificação</td></tr>' +
+             '<tr><td>Google (Entrar com o Google) e Apple (Entrar com a Apple), só se os usares</td><td>Entrar sem palavra-passe</td><td>Nome, e-mail e foto da conta</td></tr>' +
+             '<tr><td>Expo (EAS Update)</td><td>Entregar as atualizações da app</td><td>Versão da app e do sistema, endereço IP</td></tr>' +
+             '<tr><td>Google Play</td><td>Distribuição da app e o pedido de avaliação da loja</td><td>Conforme a política da Google</td></tr>' +
+             '<tr><td>[Fornecedor de e-mail, por definir]</td><td>Enviar os e-mails da conta (código, recuperação)</td><td>E-mail</td></tr>' +
+             '</tbody></table></div><p>A <strong>tradução automática</strong> é feita no teu telemóvel (Google ML Kit): o texto não sai do aparelho. Não há publicidade nem rastreadores de terceiros na app.</p>' +
+             '<h2>5. Quanto tempo guardamos</h2><ul><li>Conta, desafios, provas, mensagens e o registo dos aceites: enquanto a conta existir. Ao apagares a conta, são apagados de imediato.</li><li>Cópias de segurança: substituídas periodicamente pelo fornecedor.</li><li>Registos de falhas, estatísticas de uso e contagem de ecrãs: 90 dias.</li><li>Notificações por entregar: 60 dias. Registos de envio de notificações: 90 dias. Tentativas de código: 30 dias.</li><li>Denúncias e decisões de moderação: 24 meses, para defesa de direitos.</li><li>Pedidos de ajuda e sugestões: 24 meses.</li></ul><p>O que passa do prazo é apagado automaticamente todos os dias.</p>' +
+             '<h2>6. Os teus direitos</h2><p>Podes pedir acesso, correção, apagamento, limitação e portabilidade, e opor-te a tratamentos baseados em interesse legítimo, <strong>sem custo</strong>. Na app: <strong>Perfil → Privacidade → Os meus dados → Baixar</strong> dá-te uma cópia de tudo num ficheiro; <strong>Perfil → Conta e segurança → Apagar conta</strong> apaga tudo, menos o que a lei obrigar a guardar. Para o resto, escreve para <a href="mailto:{emailPrivacidade}">{emailPrivacidade}</a>. Podes também reclamar à autoridade de proteção de dados (no Brasil, a ANPD; em Portugal, a CNPD).</p>' +
+             '<h2>7. Idade mínima e crianças</h2><p>O Scype é para pessoas com <strong>{idade} anos ou mais</strong>, e isso é perguntado no registo. Não recolhemos dados de crianças: quem tem menos de {idade} anos não consegue criar conta. Se soubermos que uma conta pertence a alguém mais novo, apagamo-la.</p>' +
              '<h2>8. Segurança</h2><p>Cada pessoa só vê o que lhe é permitido, com regras aplicadas no servidor. Fotos, vídeos das provas e anexos das conversas abrem com links temporários. Se houver uma violação de dados com risco para ti, avisamos-te nos prazos legais.</p>' +
-             '<h2>9. Alterações</h2><p>Se esta política mudar de forma relevante, avisamos na app e pedimos nova aceitação quando for necessário.</p>'
+             '<h2>9. Alterações</h2><p>Se esta política mudar de forma relevante, avisamos na app e pedimos nova aceitação quando for necessário.</p>' +
+             '<h2>10. Inteligência artificial e decisões automáticas</h2><p><strong>Não usamos os teus dados para treinar inteligência artificial.</strong> As mensagens do Alter Ego são escolhidas no teu telemóvel a partir de textos escritos pela equipa do Scype, e a tradução é feita no próprio telemóvel. A moderação automática oculta conteúdo com muitas denúncias até ser revisto; podes sempre contestar (ver <a href="#moderacao">Moderação</a>). Se um dia isto mudar, avisamos antes e podes recusar.</p>' +
+             '<h2>11. Cookies e rastreadores</h2><p>Esta página não usa cookies nem rastreadores, e a fonte é servida por nós. A app não tem publicidade nem rastreadores de terceiros; as estatísticas de uso só funcionam se aceitares e podes desligá-las em Perfil → Privacidade.</p>' +
+             '<h2>12. Comunicações de marketing</h2><p>Não enviamos e-mails nem notificações de marketing. Se um dia o fizermos, pedimos antes uma autorização separada, desmarcada por omissão, e cada mensagem terá um link para deixares de receber.</p>' +
+             '<h2>13. Encarregado pelos dados</h2><p>Quem responde pelos teus dados: {encarregado}. Contacto: <a href="mailto:{emailPrivacidade}">{emailPrivacidade}</a>.</p>'
         },
         regras: {
           h: 'Regras da Comunidade',
@@ -260,6 +280,7 @@
     en: {
       titulo: 'Scype - Help and legal documents',
       rodape: 'Scype · Legal documents, version {versao}',
+      contactoPrivacidade: 'Privacy and personal data: {encarregado} · <a href="mailto:{emailPrivacidade}">{emailPrivacidade}</a>',
       versao: 'Version {versao} · Last updated: November 2026',
       abas: { ajuda: 'Help', termos: 'Terms', privacidade: 'Privacy', regras: 'Rules', moderacao: 'Moderation', desafios: 'Challenges', 'eliminar-conta': 'Delete account' },
       docs: {
@@ -282,11 +303,13 @@
              '<h2>7. Price</h2><p>Today Scype makes no charges and does not ask for payment details. Anyone who creates an account gets a gift of 7 free days with everything unlocked. If payment is introduced, the price and conditions will be shown clearly before any charge, and nothing will be charged without your confirmation. These Terms will be updated at that time.</p>' +
              '<h2>8. Liability</h2><p>Scype is provided "as is". We are not liable for indirect damages or for decisions you make based on challenges created by other people, without prejudice to the consumer rights that the law guarantees you and that cannot be waived.</p>' +
              '<h2>9. Changes</h2><p>We may change these Terms. We give reasonable notice and, if the change is relevant, ask you to accept again. You can stop using Scype and delete your account at any time.</p>' +
-             '<h2>10. Applicable law</h2><p>The law of the country of establishment applies, without prejudice to the mandatory rules of the country where you live.</p>'
+             '<h2>10. Applicable law</h2><p>The law of the country of establishment applies, without prejudice to the mandatory rules of the country where you live.</p>' +
+             '<h2>11. Copyright and reports</h2><p>If someone posted your content on Scype without permission, or illegal content, report it in the app (⋯ menu → Report) or write to <a href="mailto:{email}">{email}</a> with the link or a description of the content, the reason and, for copyright, proof that you own it. We will reply and, where appropriate, remove the content.</p>' +
+             '<h2>12. Automatically generated content</h2><p>Alter Ego messages and translations are generated automatically by the app and are labelled ("Translated · see original"). They are not professional advice.</p>'
         },
         privacidade: {
           h: 'Privacy Policy',
-          c: '<h2>1. Who handles your data</h2><p>The controller is {entidade}. Privacy contact: <a href="mailto:{email}">{email}</a>.</p>' +
+          c: '<h2>1. Who handles your data</h2><p>The controller is {entidade}. Privacy contact: <a href="mailto:{emailPrivacidade}">{emailPrivacidade}</a>.</p>' +
              '<h2>2. What data we collect and why</h2><div class="tabela"><table><thead><tr><th>Data</th><th>Why</th><th>Who sees it</th></tr></thead><tbody>' +
              '<tr><td>Email and password (stored encrypted)</td><td>Create and protect the account</td><td>Only you and Scype</td></tr>' +
              '<tr><td>Username and photo</td><td>Identify you in the community</td><td>People with an account</td></tr>' +
@@ -304,14 +327,27 @@
              '<tr><td>Anonymous count of each screen before creating an account (does not identify the person or phone)</td><td>Understand where people give up</td><td>Only Scype</td></tr>' +
              '<tr><td>Alter Ego (name, personality, focus, phrase and whatever you fill in). Replies are generated on your phone</td><td>Create your ideal self and the conversations with it</td><td>Only you</td></tr>' +
              '<tr><td>Name, email and photo from your Google account, only if you sign in with Google</td><td>Create the account without a password</td><td>As in the rows above</td></tr>' +
+             '<tr><td>Gender (man, woman, other or prefer not to say), <strong>optional</strong></td><td>Writing notifications with the right gender (in languages that need it)</td><td>Only you and Scype</td></tr>' +
+             '<tr><td>Record of your acceptances (what, version, server date and time, app version)</td><td>Proving you accepted the Terms, the Privacy Policy and the minimum age</td><td>Only you and Scype</td></tr>' +
              '</tbody></table></div><p><strong>We do not use your data for advertising and we do not sell it.</strong></p>' +
              '<h2>3. What others see</h2><p>People with an account can see your username, photo, level, streak record, number of badges, supports (per your settings) and the proof you chose to share. <strong>Your email is never shown.</strong></p>' +
-             '<h2>4. Providers</h2><ul><li><strong>Supabase:</strong> database, authentication, files and server functions.</li><li><strong>Google Firebase:</strong> notifications.</li><li><strong>Automatic translation:</strong> done on your own phone (Google ML Kit). The text is not sent to any server; the phone only downloads the language pack.</li><li><strong>Google:</strong> sign-in with a Google account, if you choose it.</li></ul><p>These services may process data outside your country, with the safeguards the law requires.</p>' +
-             '<h2>5. How long we keep data</h2><ul><li>Account and content: while the account exists.</li><li>When you delete your account, data and files are deleted immediately. Backups are replaced periodically.</li><li>Crash logs and statistics: 90 days. When you delete your account, statistics are deleted and crash logs are no longer linked to you.</li><li>Reports and moderation decisions: as long as needed to defend rights and comply with the law.</li></ul>' +
-             '<h2>6. Your rights</h2><p>You can request access, correction, deletion, restriction and portability, and object to processing based on legitimate interest. Many of these can be done in the app. For the rest, write to <a href="mailto:{email}">{email}</a>. You can also complain to the data protection authority where you live.</p>' +
-             '<h2>7. Minimum age</h2><p>Scype is for people aged <strong>{idade} or older</strong>. If we learn that an account belongs to someone younger, we delete it.</p>' +
+             '<h2>4. Providers (who processes data on our behalf)</h2><div class="tabela"><table><thead><tr><th>Company</th><th>What for</th><th>What data</th></tr></thead><tbody>' +
+             '<tr><td>Supabase Inc.</td><td>Database, accounts, files and server functions</td><td>All app data</td></tr>' +
+             '<tr><td>Google (Firebase Cloud Messaging)</td><td>Delivering notifications</td><td>Device token and the notification text</td></tr>' +
+             '<tr><td>Google (Sign in with Google) and Apple (Sign in with Apple), only if you use them</td><td>Signing in without a password</td><td>Account name, email and photo</td></tr>' +
+             '<tr><td>Expo (EAS Update)</td><td>Delivering app updates</td><td>App and system version, IP address</td></tr>' +
+             '<tr><td>Google Play</td><td>Distributing the app and the store rating prompt</td><td>As per Google’s policy</td></tr>' +
+             '<tr><td>[Email provider, to be defined]</td><td>Sending account emails (code, recovery)</td><td>Email</td></tr>' +
+             '</tbody></table></div><p><strong>Automatic translation</strong> runs on your phone (Google ML Kit): the text never leaves the device. There is no advertising and no third-party tracking in the app.</p>' +
+             '<h2>5. How long we keep data</h2><ul><li>Account, challenges, proofs, messages and the record of acceptances: while the account exists. When you delete the account, they are deleted immediately.</li><li>Backups: replaced periodically by the provider.</li><li>Error logs, usage statistics and screen counts: 90 days.</li><li>Undelivered notifications: 60 days. Notification send logs: 90 days. Code attempts: 30 days.</li><li>Reports and moderation decisions: 24 months, to defend rights.</li><li>Help requests and suggestions: 24 months.</li></ul><p>Anything past its period is deleted automatically every day.</p>' +
+             '<h2>6. Your rights</h2><p>You can request access, correction, deletion, restriction and portability, and object to processing based on legitimate interest, <strong>free of charge</strong>. In the app: <strong>Profile → Privacy → My data → Download</strong> gives you a copy of everything in one file; <strong>Profile → Account and security → Delete account</strong> deletes everything except what the law requires us to keep. For anything else, write to <a href="mailto:{emailPrivacidade}">{emailPrivacidade}</a>. You can also complain to the data protection authority (in Brazil, the ANPD; in Portugal, the CNPD).</p>' +
+             '<h2>7. Minimum age and children</h2><p>Scype is for people aged <strong>{idade} or older</strong>, and we ask at sign-up. We do not collect children’s data: anyone under {idade} cannot create an account. If we learn that an account belongs to someone younger, we delete it.</p>' +
              '<h2>8. Security</h2><p>Each person only sees what they are allowed to, with rules enforced on the server. Photos, proof videos and chat attachments open through temporary links. If a data breach puts you at risk, we notify you within the legal deadlines.</p>' +
-             '<h2>9. Changes</h2><p>If this policy changes in a relevant way, we tell you in the app and ask you to accept again when necessary.</p>'
+             '<h2>9. Changes</h2><p>If this policy changes in a relevant way, we tell you in the app and ask you to accept again when necessary.</p>' +
+             '<h2>10. Artificial intelligence and automated decisions</h2><p><strong>We do not use your data to train artificial intelligence.</strong> Alter Ego messages are picked on your phone from texts written by the Scype team, and translation runs on the phone. Automatic moderation hides content with many reports until it is reviewed; you can always appeal (see <a href="#moderacao">Moderation</a>). If this ever changes, we will tell you first and you can refuse.</p>' +
+             '<h2>11. Cookies and trackers</h2><p>This page uses no cookies or trackers, and we serve the font ourselves. The app has no advertising or third-party trackers; usage statistics only work if you accept, and you can turn them off in Profile → Privacy.</p>' +
+             '<h2>12. Marketing</h2><p>We do not send marketing emails or notifications. If we ever do, we will first ask for a separate permission, unchecked by default, and every message will have an unsubscribe link.</p>' +
+             '<h2>13. Data protection officer</h2><p>Who is responsible for your data: {encarregado}. Contact: <a href="mailto:{emailPrivacidade}">{emailPrivacidade}</a>.</p>'
         },
         regras: {
           h: 'Community Rules',
@@ -344,6 +380,7 @@
     es: {
       titulo: 'Scype - Ayuda y documentos legales',
       rodape: 'Scype · Documentos legales, versión {versao}',
+      contactoPrivacidade: 'Privacidad y datos personales: {encarregado} · <a href="mailto:{emailPrivacidade}">{emailPrivacidade}</a>',
       versao: 'Versión {versao} · Última actualización: noviembre de 2026',
       abas: { ajuda: 'Ayuda', termos: 'Términos', privacidade: 'Privacidad', regras: 'Normas', moderacao: 'Moderación', desafios: 'Desafíos', 'eliminar-conta': 'Eliminar cuenta' },
       docs: {
@@ -366,11 +403,13 @@
              '<h2>7. Precio</h2><p>Hoy Scype no realiza ningún cobro ni pide datos de pago. Quien crea una cuenta recibe un regalo de 7 días gratis con todo desbloqueado. Si llega a haber pagos, el precio y las condiciones aparecerán con claridad antes de cualquier cobro, y no se cobrará nada sin tu confirmación. Estos Términos se actualizarán en ese momento.</p>' +
              '<h2>8. Responsabilidad</h2><p>Scype se presta "tal cual". No respondemos por daños indirectos ni por decisiones que tomes basándote en desafíos creados por otras personas, sin perjuicio de los derechos que la ley del consumidor te garantiza y que no pueden excluirse.</p>' +
              '<h2>9. Cambios</h2><p>Podemos cambiar estos Términos. Avisamos con antelación razonable y, si el cambio es relevante, pedimos una nueva aceptación. Puedes dejar de usar Scype y eliminar la cuenta en cualquier momento.</p>' +
-             '<h2>10. Ley aplicable</h2><p>Se aplica la ley del país de la sede, sin perjuicio de las normas imperativas del país donde vives.</p>'
+             '<h2>10. Ley aplicable</h2><p>Se aplica la ley del país de la sede, sin perjuicio de las normas imperativas del país donde vives.</p>' +
+             '<h2>11. Derechos de autor y denuncias</h2><p>Si alguien publicó en Scype contenido tuyo sin permiso, o contenido ilegal, denúncialo en la app (menú ⋯ → Denunciar) o escribe a <a href="mailto:{email}">{email}</a> con el enlace o la descripción del contenido, el motivo y, si es un derecho de autor, prueba de que eres el titular. Responderemos y, si procede, retiraremos el contenido.</p>' +
+             '<h2>12. Contenido generado automáticamente</h2><p>Los mensajes del Alter Ego y las traducciones los genera automáticamente la app y aparecen identificados ("Traducido · ver original"). No son consejos profesionales.</p>'
         },
         privacidade: {
           h: 'Política de Privacidad',
-          c: '<h2>1. Quién trata tus datos</h2><p>El responsable es {entidade}. Contacto de privacidad: <a href="mailto:{email}">{email}</a>.</p>' +
+          c: '<h2>1. Quién trata tus datos</h2><p>El responsable es {entidade}. Contacto de privacidad: <a href="mailto:{emailPrivacidade}">{emailPrivacidade}</a>.</p>' +
              '<h2>2. Qué datos recogemos y por qué</h2><div class="tabela"><table><thead><tr><th>Datos</th><th>Para qué</th><th>Quién los ve</th></tr></thead><tbody>' +
              '<tr><td>Correo y contraseña (guardada cifrada)</td><td>Crear y proteger la cuenta</td><td>Solo tú y Scype</td></tr>' +
              '<tr><td>Nombre de usuario y foto</td><td>Identificarte en la comunidad</td><td>Personas con cuenta</td></tr>' +
@@ -388,14 +427,27 @@
              '<tr><td>Recuento anónimo de cada pantalla antes de crear la cuenta (sin identificar a la persona ni el teléfono)</td><td>Entender dónde abandonan las personas</td><td>Solo Scype</td></tr>' +
              '<tr><td>Alter Ego (nombre, personalidad, foco, frase y lo que rellenes). Las respuestas se generan en tu teléfono</td><td>Crear tu versión ideal y las conversaciones con ella</td><td>Solo tú</td></tr>' +
              '<tr><td>Nombre, correo y foto de la cuenta de Google, solo si entras con Google</td><td>Crear la cuenta sin contraseña</td><td>Según las filas anteriores</td></tr>' +
+             '<tr><td>Género (hombre, mujer, otro o prefiero no decirlo), <strong>opcional</strong></td><td>Escribir las notificaciones con el género correcto ("campeón"/"campeona")</td><td>Solo tú y Scype</td></tr>' +
+             '<tr><td>Registro de tus aceptaciones (qué, versión, fecha y hora del servidor, versión de la app)</td><td>Probar que aceptaste los Términos, la Privacidad y la edad mínima</td><td>Solo tú y Scype</td></tr>' +
              '</tbody></table></div><p><strong>No usamos tus datos para publicidad ni los vendemos.</strong></p>' +
              '<h2>3. Qué ven los demás</h2><p>Quien tiene cuenta puede ver tu nombre de usuario, foto, nivel, récord de racha, número de insignias, apoyos (según tus ajustes) y las pruebas que elegiste compartir. <strong>El correo nunca se muestra.</strong></p>' +
-             '<h2>4. Proveedores</h2><ul><li><strong>Supabase:</strong> base de datos, autenticación, archivos y funciones del servidor.</li><li><strong>Google Firebase:</strong> notificaciones.</li><li><strong>Traducción automática:</strong> se hace en tu propio teléfono (Google ML Kit). El texto no se envía a ningún servidor; el teléfono solo descarga el paquete del idioma.</li><li><strong>Google:</strong> entrar con la cuenta de Google, si lo eliges.</li></ul><p>Estos servicios pueden tratar datos fuera de tu país, con las garantías que exige la ley.</p>' +
-             '<h2>5. Cuánto tiempo guardamos</h2><ul><li>Cuenta y contenidos: mientras exista la cuenta.</li><li>Al eliminar la cuenta, los datos y archivos se borran de inmediato. Las copias de seguridad se sustituyen periódicamente.</li><li>Registros de fallos y estadísticas: 90 días. Al eliminar la cuenta, las estadísticas se borran y los registros de fallos dejan de estar vinculados a ti.</li><li>Denuncias y decisiones de moderación: el tiempo necesario para defender derechos y cumplir la ley.</li></ul>' +
-             '<h2>6. Tus derechos</h2><p>Puedes pedir acceso, rectificación, supresión, limitación y portabilidad, y oponerte a tratamientos basados en interés legítimo. Muchos se hacen en la propia app. Para los demás, escribe a <a href="mailto:{email}">{email}</a>. También puedes reclamar ante la autoridad de protección de datos de tu país.</p>' +
-             '<h2>7. Edad mínima</h2><p>Scype es para personas de <strong>{idade} años o más</strong>. Si sabemos que una cuenta pertenece a alguien menor, la eliminamos.</p>' +
+             '<h2>4. Proveedores (quién trata datos por nuestra cuenta)</h2><div class="tabela"><table><thead><tr><th>Empresa</th><th>Para qué</th><th>Qué datos</th></tr></thead><tbody>' +
+             '<tr><td>Supabase Inc.</td><td>Base de datos, cuentas, archivos y funciones del servidor</td><td>Todos los datos de la app</td></tr>' +
+             '<tr><td>Google (Firebase Cloud Messaging)</td><td>Entregar las notificaciones</td><td>Token del móvil y el texto de la notificación</td></tr>' +
+             '<tr><td>Google (Iniciar sesión con Google) y Apple (Iniciar sesión con Apple), solo si los usas</td><td>Entrar sin contraseña</td><td>Nombre, correo y foto de la cuenta</td></tr>' +
+             '<tr><td>Expo (EAS Update)</td><td>Entregar las actualizaciones de la app</td><td>Versión de la app y del sistema, dirección IP</td></tr>' +
+             '<tr><td>Google Play</td><td>Distribución de la app y la solicitud de valoración de la tienda</td><td>Según la política de Google</td></tr>' +
+             '<tr><td>[Proveedor de correo, por definir]</td><td>Enviar los correos de la cuenta (código, recuperación)</td><td>Correo</td></tr>' +
+             '</tbody></table></div><p>La <strong>traducción automática</strong> se hace en tu móvil (Google ML Kit): el texto no sale del aparato. No hay publicidad ni rastreadores de terceros en la app.</p>' +
+             '<h2>5. Cuánto tiempo guardamos</h2><ul><li>Cuenta, desafíos, pruebas, mensajes y el registro de aceptaciones: mientras exista la cuenta. Al borrar la cuenta, se borran de inmediato.</li><li>Copias de seguridad: el proveedor las sustituye periódicamente.</li><li>Registros de fallos, estadísticas de uso y recuento de pantallas: 90 días.</li><li>Notificaciones sin entregar: 60 días. Registros de envío de notificaciones: 90 días. Intentos de código: 30 días.</li><li>Denuncias y decisiones de moderación: 24 meses, para la defensa de derechos.</li><li>Solicitudes de ayuda y sugerencias: 24 meses.</li></ul><p>Lo que supera su plazo se borra automáticamente cada día.</p>' +
+             '<h2>6. Tus derechos</h2><p>Puedes pedir acceso, rectificación, supresión, limitación y portabilidad, y oponerte a tratamientos basados en interés legítimo, <strong>sin coste</strong>. En la app: <strong>Perfil → Privacidad → Mis datos → Descargar</strong> te da una copia de todo en un archivo; <strong>Perfil → Cuenta y seguridad → Borrar cuenta</strong> lo borra todo, salvo lo que la ley obligue a guardar. Para lo demás, escribe a <a href="mailto:{emailPrivacidade}">{emailPrivacidade}</a>. También puedes reclamar ante la autoridad de protección de datos (en Brasil, la ANPD; en Portugal, la CNPD).</p>' +
+             '<h2>7. Edad mínima y niños</h2><p>Scype es para personas de <strong>{idade} años o más</strong>, y se pregunta en el registro. No recogemos datos de niños: quien tiene menos de {idade} años no puede crear una cuenta. Si sabemos que una cuenta pertenece a alguien más joven, la borramos.</p>' +
              '<h2>8. Seguridad</h2><p>Cada persona solo ve lo que se le permite, con reglas aplicadas en el servidor. Las fotos, los vídeos de las pruebas y los adjuntos de las conversaciones se abren con enlaces temporales. Si una violación de datos supone un riesgo para ti, te avisamos en los plazos legales.</p>' +
-             '<h2>9. Cambios</h2><p>Si esta política cambia de forma relevante, avisamos en la app y pedimos una nueva aceptación cuando sea necesario.</p>'
+             '<h2>9. Cambios</h2><p>Si esta política cambia de forma relevante, avisamos en la app y pedimos una nueva aceptación cuando sea necesario.</p>' +
+             '<h2>10. Inteligencia artificial y decisiones automáticas</h2><p><strong>No usamos tus datos para entrenar inteligencia artificial.</strong> Los mensajes del Alter Ego se eligen en tu móvil a partir de textos escritos por el equipo de Scype, y la traducción se hace en el propio móvil. La moderación automática oculta el contenido con muchas denuncias hasta revisarlo; siempre puedes recurrir (ver <a href="#moderacao">Moderación</a>). Si esto cambia algún día, te avisaremos antes y podrás negarte.</p>' +
+             '<h2>11. Cookies y rastreadores</h2><p>Esta página no usa cookies ni rastreadores, y la fuente la servimos nosotros. La app no tiene publicidad ni rastreadores de terceros; las estadísticas de uso solo funcionan si las aceptas y puedes desactivarlas en Perfil → Privacidad.</p>' +
+             '<h2>12. Comunicaciones de marketing</h2><p>No enviamos correos ni notificaciones de marketing. Si algún día lo hacemos, pediremos antes una autorización separada, desmarcada por defecto, y cada mensaje tendrá un enlace para darte de baja.</p>' +
+             '<h2>13. Responsable de los datos</h2><p>Quién responde por tus datos: {encarregado}. Contacto: <a href="mailto:{emailPrivacidade}">{emailPrivacidade}</a>.</p>'
         },
         regras: {
           h: 'Normas de la Comunidad',
@@ -438,6 +490,8 @@
   function preencher(t) {
     return t
       .replace(/\{email\}/g, CONFIG.email)
+      .replace(/\{encarregado\}/g, CONFIG.encarregado)
+      .replace(/\{emailPrivacidade\}/g, CONFIG.emailPrivacidade)
       .replace(/\{entidade\}/g, CONFIG.entidade)
       .replace(/\{versao\}/g, CONFIG.versao)
       .replace(/\{idade\}/g, String(CONFIG.idadeMinima));
@@ -477,6 +531,8 @@
     if (bruto.indexOf('access_token=') < 0 && bruto.indexOf('error') < 0) return null;
     var p = new URLSearchParams(bruto);
     if (p.get('access_token') && p.get('type') === 'recovery') return { token: p.get('access_token'), bruto: bruto };
+    // Entrar com o Google que não voltou à app: devolve a sessão à app
+    if (p.get('access_token') && p.get('refresh_token')) return { login: true, bruto: bruto };
     if (p.get('error_code') || p.get('error_description')) return { erro: true };
     return null;
   }
@@ -490,8 +546,18 @@
     document.title = r.h + ' - Scype';
     document.getElementById('idioma').value = lingua;
     document.getElementById('abas').innerHTML = '';
-    document.getElementById('rodape').textContent = preencher(TEXTOS[lingua].rodape);
+    desenharRodape(TEXTOS[lingua]);
     var c = document.getElementById('conteudo');
+    if (recuperacao.login) {
+      var lk = { pt: ['A abrir o Scype...', 'Se a app não abrir sozinha, toca no botão.', 'Abrir o Scype'], en: ['Opening Scype...', "If the app doesn't open by itself, tap the button.", 'Open Scype'], es: ['Abriendo Scype...', 'Si la app no se abre sola, toca el botón.', 'Abrir Scype'] }[lingua] || ['A abrir o Scype...', '', 'Abrir o Scype'];
+      var destino = 'scype://auth-callback#' + recuperacao.bruto;
+      // A sessão não fica no endereço da página
+      history.replaceState(null, '', location.pathname + location.search);
+      c.innerHTML = '<h1>' + esc(lk[0]) + '</h1><div class="cartao"><p>' + esc(lk[1]) + '</p><a class="botao" href="' + esc(destino) + '">' + esc(lk[2]) + '</a></div>';
+      document.title = 'Scype';
+      location.href = destino;
+      return;
+    }
     if (recuperacao.erro) {
       c.innerHTML = '<h1>' + esc(r.h) + '</h1><div class="cartao"><p>' + esc(r.expirou) + '</p></div>';
       return;
@@ -536,6 +602,16 @@
     });
   }
 
+  // Rodapé: os documentos legais à distância de um toque, em todas as vistas
+  function desenharRodape(t) {
+    var r = document.getElementById('rodape');
+    var links = ['termos', 'privacidade', 'regras', 'moderacao', 'eliminar-conta']
+      .map(function (id) { return '<a href="#' + id + '">' + t.abas[id] + '</a>'; })
+      .join(' · ');
+    r.innerHTML = '<p>' + preencher(t.rodape) + '</p><p class="rodape-links">' + links + '</p>' +
+      '<p>' + preencher(t.contactoPrivacidade) + '</p>';
+  }
+
   function desenhar() {
     if (recuperacao) return desenharRecuperacao();
     var t = TEXTOS[lingua];
@@ -550,7 +626,7 @@
     var aviso = AVISO_INGLES[pedida] ? '<p class="aviso" lang="' + pedida + '">' + AVISO_INGLES[pedida] + '</p>' : '';
     var versao = atual === 'ajuda' ? '' : '<p class="versao">' + preencher(t.versao) + '</p>';
     document.getElementById('conteudo').innerHTML = aviso + '<h1>' + doc.h + '</h1>' + versao + preencher(doc.c);
-    document.getElementById('rodape').textContent = preencher(t.rodape);
+    desenharRodape(t);
     var ativa = document.querySelector('nav a[aria-current="page"]');
     if (ativa && ativa.scrollIntoView) ativa.scrollIntoView({ block: 'nearest', inline: 'center' });
   }
